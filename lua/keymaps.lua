@@ -8,7 +8,7 @@ function map(mode, lhs, rhs, opts)
 end
 
 map("n","<C-s>",":w <CR>")
-map("i","<C-s>","<Esc>:w <CR>a")
+map("i","<C-s>",'<Esc>:w <CR>a')
 
 map("n","<C-q>",":qa! <CR>")
 map("i","<C-q>","<Esc>:qa! <CR>")
@@ -19,6 +19,10 @@ map("i","<C-q>","<Esc>:qa! <CR>")
 map("n","<C-f>",":NvimTreeToggle <CR>")
 map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
 
+
+map("n","<C-a>","<C-w>w")
+map("i","<C-a>","<Esc><C-w>wi")
+-- map("n","<Leader>iop","<Esc>:40vs input.txt <CR>:sp output.txt <CR><C-w>w")
 
 -- map("n", ",<Space>", ":nohlsearch<CR>", { silent = true })
 -- map("n", "<Leader>", ":<C-u>WhichKey ','<CR>" { silent = true })
