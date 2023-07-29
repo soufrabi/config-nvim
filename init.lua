@@ -54,7 +54,7 @@ local function command_exists(command)
 end
 
 
-if globals.getOS() == "Linux" then
+if G.getOS() == "Linux" then
     if command_exists("ascii-image-converter") then
         -- print("ascii-image-converter command exists!")
         -- Image Viewer using Ascii art plugin
@@ -114,23 +114,23 @@ end
 
 -- Coc color schemes : light or dark
 
-if (file_exists(home_dir .. '/.config/nvim/vimscript/coc-config-light.vim'))
+if (file_exists(G.config_dir..'/vimscript/coc-config-light.vim'))
 then
-    vim.cmd('source ~/.config/nvim/vimscript/coc-config-light.vim')
+    vim.cmd('source '..G.config_dir..'/vimscript/coc-config-light.vim')
 end
 
 
-if (file_exists(home_dir .. '/.config/nvim/vimscript/coc-config-dark.vim'))
+if (file_exists(G.config_dir .. '/vimscript/coc-config-dark.vim'))
 then
-    vim.cmd('source ~/.config/nvim/vimscript/coc-config-dark.vim')
+    vim.cmd('source '..G.config_dir..'/vimscript/coc-config-dark.vim')
 end
 
 
 -- Testing
 
-if (file_exists(home_dir .. '/.config/nvim/vimscript/test.vim'))
+if (file_exists(G.config_dir .. '/vimscript/test.vim'))
 then
-    vim.cmd('source ~/.config/nvim/vimscript/test.vim')
+    vim.cmd('source '..G.config_dir..'/vimscript/test.vim')
 end
 -- Write test vimscript code in vimscript/test.vim
 

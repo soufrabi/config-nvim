@@ -133,7 +133,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
         -- fp is absolute file path
 
-        if IsNonCodeBuffer(fp) then
+        if G.IsNonCodeBuffer(fp) then
             return
         end
 
@@ -174,7 +174,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
         -- dir is path to directory
         -- fnwq is filename (not path) without extension
 
-        if IsNonCodeBuffer(fp) then
+        if G.IsNonCodeBuffer(fp) then
             return
         end
 

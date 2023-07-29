@@ -112,7 +112,7 @@ vim.api.nvim_create_autocmd("BufEnter",{
         -- local extension = vim.fn.fnamemodify(filename, ":e")
         -- print(extension)
 
-        if IsNonCodeBuffer(fp) then
+        if G.IsNonCodeBuffer(fp) then
             return
         end
 

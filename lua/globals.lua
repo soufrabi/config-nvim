@@ -1,13 +1,13 @@
 -- Globals
 
-globals = {}
+G = {}
 
 
 
 --  Detect if the current file is a fugitive or terminal buffer
 
 
-function IsNonCodeBuffer(str)
+function G.IsNonCodeBuffer(str)
   -- print(str)
 
   if string.sub(str, 1, 11) == "fugitive://" and string.sub(str, -6) == ".git//" then
@@ -19,7 +19,7 @@ function IsNonCodeBuffer(str)
   end
 end
 
-function close_io_buffers()
+function G.close_io_buffers()
   -- Get all open buffer handles
   local buffers = vim.api.nvim_list_bufs()
 
@@ -40,7 +40,7 @@ function close_io_buffers()
 end
 
 
-globals.getOS =  function ()
+G.getOS =  function ()
 
   local sysname = vim.loop.os_uname().sysname
 
@@ -62,13 +62,13 @@ end
 
 
 -- Get the path to the home directory
-home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+G.home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
 
 -- Get path for config directory
-globals.config_dir = vim.fn.stdpath('config')
+G.config_dir = vim.fn.stdpath('config')
 
 -- globals.path = require('plenary.path')
 
 -- Filetypes I normally deal with
-file_types = { "*.c", "*.cpp", "*.sh", "*.java", "*.py", "*.md", "*.go", "*.rs", "*.dart", "*.lua", "*.txt", "*.html",
+G.file_types = { "*.c", "*.cpp", "*.sh", "*.java", "*.py", "*.md", "*.go", "*.rs", "*.dart", "*.lua", "*.txt", "*.html",
   "*.css", "*.js", "*.jsx", "*.json" }

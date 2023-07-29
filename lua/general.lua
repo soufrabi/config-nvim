@@ -64,10 +64,10 @@ vim.cmd('set undofile')
 
 
 
-if globals.getOS() == 'Linux' then
-   vim.o.undodir = globals.config_dir..'/undo'
+if G.getOS() == 'Linux' then
+   vim.o.undodir = G.config_dir..'/undo'
 elseif globals.getOS() == 'Windows' then
-   vim.o.undodir = globals.config_dir..'\\undo'
+   vim.o.undodir = G.config_dir..'\\undo'
 end
 
 

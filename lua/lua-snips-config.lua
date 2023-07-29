@@ -3,7 +3,7 @@
 
 
 -- Load vs code style snippets
-require("luasnip.loaders.from_vscode").lazy_load({paths = "~/.config/nvim/snippets/vs-code-snippets"})
+require("luasnip.loaders.from_vscode").lazy_load({paths = G.config_dir.."/snippets/vs-code-snippets"})
 
 -- Jump to next snippet field with <Tab> in insert, select, and visual mode
 vim.api.nvim_set_keymap("i", "<Tab>", "luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'", { expr = true, silent = true })

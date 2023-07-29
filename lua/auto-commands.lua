@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd("BufEnter",{
         -- fp is absolute file path
 
 
-        if IsNonCodeBuffer(fp) then
+        if G.IsNonCodeBuffer(fp) then
             return
         end
 
@@ -62,7 +62,7 @@ vim.api.nvim_create_autocmd("BufWinEnter",{
 
         -- fp is absolute file path
 
-        if IsNonCodeBuffer(fp) then
+        if G.IsNonCodeBuffer(fp) then
             return
         end
 
@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd("BufWinLeave",{
 
         -- fp is absolute file path
 
-        if IsNonCodeBuffer(fp) then
+        if G.IsNonCodeBuffer(fp) then
             return
         end
 
