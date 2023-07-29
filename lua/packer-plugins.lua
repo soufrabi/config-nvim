@@ -91,4 +91,9 @@ return require('packer').startup(function(use)
 			require('pretty-fold').setup()
 		end
 	}
+
+	-- Catppuccin
+	-- colorscheme works better with true colorsupport
+	use { "catppuccin/nvim", as = "catppuccin" }
+
 end)

@@ -42,6 +42,12 @@ set.cursorline = true
 
 -- colorscheme
 vim.cmd("colorscheme Dark")
+-- Dark colorscheme is in vim-colorschemes plugin
+
+-- this colorscheme may be overriden by catppuccin
+-- check catppuccin.lua and colors-config.lua
+
+-- Alternatives
 -- vim.cmd("colorscheme brighton")
 
 

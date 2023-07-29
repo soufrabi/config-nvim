@@ -28,6 +28,14 @@ require('coderunner')
 require('auto-commands')
 require('telescope-config')
 
+-- Works better with true color support
+require('catppuccin-config')
+require('colors-config')
+
+
+
+
+-- Vim script files
 
 vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/general.vim')
