@@ -1,16 +1,14 @@
 -- Globals
 
+globals = {}
 
-
--- Get the path to the home directory
-home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
 
 
 --  Detect if the current file is a fugitive or terminal buffer
 
 
 function IsNonCodeBuffer(str)
-    -- print(str)
+  -- print(str)
 
   if string.sub(str, 1, 11) == "fugitive://" and string.sub(str, -6) == ".git//" then
     return true
@@ -20,9 +18,6 @@ function IsNonCodeBuffer(str)
     return false
   end
 end
-
-
-
 
 function close_io_buffers()
   -- Get all open buffer handles
@@ -39,16 +34,40 @@ function close_io_buffers()
     -- Check if the file name matches "input.txt" or "output.txt"
     if file_name == "input.txt" or file_name == "output.txt" then
       -- Close the buffer
-      vim.api.nvim_buf_delete(buf, {force = true})
+      vim.api.nvim_buf_delete(buf, { force = true })
     end
   end
 end
 
 
+globals.getOS =  function ()
+
+  local sysname = vim.loop.os_uname().sysname
+
+  if sysname == 'Linux' then
+    return "Linux"
+    -- print('Running on Linux')
+  elseif sysname == 'Windows' or sysname == 'Windows_NT' then
+    return "Windows"
+    -- print('Running on Windows')
+  elseif string.find(sysname, "Windows", 1, true) then
+    return "Windows"
+    -- print('Running on Windows')
+  else
+    return "Windows"
+    -- print('Unknown operating system')
+  end
+end
+
+
+
+-- Get the path to the home directory
+home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+
+-- Get path for config directory
+globals.config_dir = vim.fn.stdpath('config')
 
 
 -- Filetypes I normally deal with
-file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt","*.html","*.css","*.js","*.jsx","*.json"}
-
-
-
+file_types = { "*.c", "*.cpp", "*.sh", "*.java", "*.py", "*.md", "*.go", "*.rs", "*.dart", "*.lua", "*.txt", "*.html",
+  "*.css", "*.js", "*.jsx", "*.json" }

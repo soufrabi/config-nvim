@@ -18,9 +18,7 @@ require('indent-line-config')
 
 
 require('emmet-config')
--- require('nerdtree-config')
 require('markdown-preview-config')
-require('bookmarks-config')
 
 require('general-python')
 
@@ -31,8 +29,17 @@ require('telescope-config')
 -- Works better with true color support
 require('catppuccin-config')
 require('colors-config')
--- require('marks-config')
 require('undotree-config')
+require('vim-commentary-config')
+require('fzf-config')
+
+
+-- File managers
+-- require('nerdtree-config')
+
+-- bookmarks,marks (not used)
+-- require('marks-config')
+-- require('bookmarks-config')
 
 
 local function command_exists(command)
@@ -64,20 +71,21 @@ end
 
 -- Vim script files
 
-vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
-vim.cmd('source ~/.config/nvim/vimscript/general.vim')
-vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
-vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
 
+-- vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
+
+-- vim.cmd('source ~/.config/nvim/vimscript/general.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
+
+
+-- vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 -- Code runner moved to lua
 -- vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
-
-vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
-vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
-
+-- vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
 -- vim.cmd('source ~/.config/nvim/vimscript/nerdtree-config.vim')
 
-vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 
 
 -- Optional / Device specific files

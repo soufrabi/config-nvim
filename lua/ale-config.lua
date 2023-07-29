@@ -9,3 +9,17 @@ vim.g.ale_sign_warning = '.'
 vim.g.ale_lint_on_enter = 0
 
 
+
+
+-- Look at vimscript/ale-config.vim
+
+
+vim.g.ale_pattern_options = {
+   ['.*\\.cpp$'] = {ale_enabled = 0},
+   ['.*\\.c$'] = {ale_enabled = 0},
+   ['.*\\.tex$'] = {ale_enabled = 0},
+}
+
+vim.g.ale_linters = {
+   sh = {'language_server'},
+}
