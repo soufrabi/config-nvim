@@ -24,6 +24,12 @@
 				"language": [
 					"cpp"
 				],
+				"path": "./snippets/cpp_ayush.json"
+			},
+			{
+				"language": [
+					"cpp"
+				],
 				"path": "./snippets/cpp_matrix.json"
 			},
 			{
