@@ -2,7 +2,7 @@
 
 Create a virtualenv
 ```
-python -m venv ~/venvs/.nvim-venv && source ~/venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
+python -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
 ```
 
 Set that path so that nvim reconizes it
@@ -13,7 +13,7 @@ vim.g.python3_host_prog=""
 
 to activate
 ```
-source ~/venvs/.nvim-venv/bin/activate
+source ~/.venvs/.nvim-venv/bin/activate
 ```
 
 [Python Virtualenv Stackoverflow](https://stackoverflow.com/questions/67951453/python-and-nvim-how-to-activate-both-global-and-local-virtual-env-at-the-same-t)
@@ -22,7 +22,7 @@ source ~/venvs/.nvim-venv/bin/activate
 The virtualenv that the python_host_prog is pointing to is not for the virtual environment that the python 
 language server uses. It is for nvim to use on python plugins. So you can have a separate virtual environment 
 to use to execute the plugins that has pynvim installed and then your virtual environment for your project.
-python3 -m venv ~/venvs/.nvim-venv && source ~/venvs/.nvim-venv/bin/activate && python3 -m pip install pynvim 
+python3 -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install pynvim 
 && which python
 Then you can take the output from which python and put that in your init.vim as g:python_host_prog and 
 g:python3_host_prog.
