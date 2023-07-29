@@ -7,7 +7,7 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-vim.g.mapleader = " "
+vim.g.mapleader = ";"
 
 map("n","<C-s>",":w <CR>")
 map("i","<C-s>",'<Esc>:w <CR>a')
@@ -15,16 +15,19 @@ map("i","<C-s>",'<Esc>:w <CR>a')
 
 map("n","<C-q>",":qa! <CR>")
 map("i","<C-q>","<Esc>:qa! <CR>")
-map("n","lll",":qa! <CR>")
+-- map("n","lll",":qa! <CR>")
 
-map("n",";",":")
-map("v",";",":")
-map("n",";;",";")
-map("v",";;",";")
+-- map("n",";",":")
+-- map("v",";",":")
+-- map("n",";;",";")
+-- map("v",";;",";")
 
 
 -- map("n",":",";")
 -- map("n",":",";")
+
+map("n","<Leader>k","<C-u>")
+map("n","<Leader>j","<C-d>")
 
 
 map("n","<C-f>",":NvimTreeToggle <CR>")

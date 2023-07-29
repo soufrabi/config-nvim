@@ -24,5 +24,5 @@ set.splitright = true
 set.splitbelow = true
 
 set.nu = true
--- set.relativenumber=true
+set.relativenumber=true
 
