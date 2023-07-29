@@ -21,17 +21,32 @@ function! BookmarkMapKeys()
 endfunction
 
 function! BookmarkUnmapKeys()
-    unmap mm
-    unmap mi
-    unmap mn
-    unmap mp
-    unmap ma
-    unmap mc
-    unmap mx
+    " unmap mm
+    " unmap mi
+    " unmap mn
+    " unmap mp
+    " unmap ma
+    " unmap mc
+    " unmap mx
 
-    unmap mkk
-    unmap mjj
-    unmap mg
+    " unmap mkk
+    " unmap mjj
+    " unmap mg
+
+
+    nnoremap mm <Nop>
+    nnoremap mi <Nop>
+    nnoremap mn <Nop>
+    nnoremap mp <Nop>
+    nnoremap ma <Nop>
+    nnoremap mc <Nop>
+    nnoremap mx <Nop>
+
+    nnoremap mkk <Nop>
+    nnoremap mjj <Nop>
+    nnoremap mg <Nop>
+
+
 endfunction
 
 " autocmd BufEnter * :call BookmarkMapKeys()

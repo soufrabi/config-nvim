@@ -38,6 +38,13 @@ require("nvim-tree").setup({
 
 
 
+
+local ignored_dirs = {'^\\.git','^\\.android','^\\.atom','^\\.cache','^\\.config','^\\.dart','^\\.dartserver','^\\.designer','^\\.flutter-devtools','^\\.gnupg','^\\.gradle','^\\.ipynb_checkpoints','^\\.ipython','^\\.java','^\\.jupyter','^\\.local','^\\.m2','^\\.mozilla','^\\.mplayer','^\\.npm','^\\.nv','^\\.pki','^\\.pub-cache','^\\.remarkable','^\\.snap','^\\.ssh','^\\.texlive','^\\.tmux','^\\.var','^\\.vim','^\\.vscode-oss','^\\.w3m','^\\.yarn'}
+
+
+-- Reference for setup
+-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
+
 require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       auto_reload_on_write = true,
       disable_netrw = false,
@@ -182,7 +189,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
         dotfiles = false,
         git_clean = false,
         no_buffer = false,
-        custom = {},
+        custom = ignored_dirs,
         exclude = {},
       },
       filesystem_watchers = {
@@ -304,8 +311,9 @@ function NvimTreeToggleVCS()
 
   local isGitDir, gitdir = get_gitdir()
   if isGitDir == false then
-    vim.cmd("NvimTreeFindFileToggle")
+    vim.cmd("NvimTreeFindFileToggle "..home_dir)
   else
+    -- print(gitdir)
     vim.cmd("NvimTreeFindFileToggle "..gitdir)
   end
 end
@@ -316,8 +324,40 @@ end
 
 
 
-map("n","<C-\\>",":lua NvimTreeToggleVCS()<CR>", {silent = true})
-map("n","<C-\\>","<Esc>:lua NvimTreeToggleVCS()<CR>", {silent = true})
-map("n","<C-\\>","<Esc>:lua NvimTreeToggleVCS()<CR>",{silent = true})
+map("n","<Leader>t",":lua NvimTreeToggleVCS()<CR>", {silent = true, noremap = true})
+-- map("i","<C-f>","<Esc>:lua NvimTreeToggleVCS()<CR>", {silent = true, noremap = true})
+-- map("v","<C-f>","<Esc>:lua NvimTreeToggleVCS()<CR>", {silent = true, noremap = true})
+
+
+
+
+-- Open at startup
+-- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup
+
+local function open_nvim_tree(data)
+
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+
+  if directory then
+    -- change to the directory
+    vim.cmd.cd(data.file)
+
+    -- open the tree
+    require("nvim-tree.api").tree.open()
+  end
+
+end
+
+local nvim_tree_startup = vim.api.nvim_create_augroup("nvim_tree_startup",{clear=true})
+
+
+vim.api.nvim_create_autocmd({ "VimEnter" },{
+    callback = open_nvim_tree,
+    group=nvim_tree_startup
+
+  })
+
 
 

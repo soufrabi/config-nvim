@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
 
 	-- Ultisnippets
 	-- use {'SirVer/ultisnips'}
-	
+
 	-- NvimTree
 	-- use {'nvim-tree/nvim-tree.lua'}
 	use {
@@ -31,8 +31,9 @@ return require('packer').startup(function(use)
 		},
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
+
 	-- NerdTree
-	use {'preservim/nerdtree'}
+	-- use {'preservim/nerdtree'}
 
     -- Vim-Airline
     use {'vim-airline/vim-airline'}

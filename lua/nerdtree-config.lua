@@ -21,14 +21,24 @@
 -- let NERDTreeDirArrows = 1
 
 
+
+
+
+-- Above settings were never used by me 
+-- There just for reference
+
+
+-- Actually Used 
+
+
 -- Lua
 -- Closing automatically
-vim.api.nvim_command("let NERDTreeQuitOnOpen = 1")
+-- vim.api.nvim_command("let NERDTreeQuitOnOpen = 1")
 -- Deleting files
-vim.api.nvim_command("let NERDTreeAutoDeleteBuffer = 1")
+-- vim.api.nvim_command("let NERDTreeAutoDeleteBuffer = 1")
 -- Making it prettier
-vim.api.nvim_command("let NERDTreeMinimalUI = 1")
-vim.api.nvim_command("let NERDTreeDirArrows = 1")
-vim.api.nvim_command("let g:NERDTreeAutoRefresh = 1")
+-- vim.api.nvim_command("let NERDTreeMinimalUI = 1")
+-- vim.api.nvim_command("let NERDTreeDirArrows = 1")
+-- vim.api.nvim_command("let g:NERDTreeAutoRefresh = 1")
 
 
