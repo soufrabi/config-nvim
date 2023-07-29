@@ -110,4 +110,7 @@ return require('packer').startup(function(use)
 	-- Unable to delete marks properly for some representation
 	-- Not a problem of the plugin
 
+	-- Undo tree
+	use {'mbbill/undotree'}
+
 end)

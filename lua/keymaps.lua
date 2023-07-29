@@ -19,48 +19,31 @@ map("n","<C-q>","<Nop>")
 map("i","<C-q>","<Nop>")
 map("v","<C-q>","<Nop>")
 
--- map("n","<C-s>",":w <CR>")
--- map("i","<C-s>",'<Esc>:w <CR>a')
--- map("n","<Leader>ss",":w <CR>")
 
--- map("n","<C-q>",":qa! <CR>")
--- map("i","<C-q>","<Esc>:qa! <CR>")
--- map("n","lll",":qa! <CR>")
-
--- map("n",";",":")
--- map("v",";",":")
--- map("n",";;",";")
--- map("v",";;",";")
+map("n", "<C-d>", "<C-d>zz", { silent = true, noremap = false })
+map("n", "<C-u>", "<C-u>zz", { silent = true, noremap = false })
 
 
--- map("n",":",";")
--- map("n",":",";")
-
-map("n", "<C-d>", "<C-d>zz", {silent = true, noremap = false})
-map("n", "<C-u>", "<C-u>zz", {silent = true, noremap = false})
+-- map("n", "<Leader>k", "<C-u>zz", { silent = true, noremap = false })
+-- map("n", "<Leader>j", "<C-d>zz", { silent = true, noremap = false })
 
 
-map("n","<Leader>k","<C-u>zz", {silent = true, noremap = false})
-map("n","<Leader>j","<C-d>zz", {silent = true, noremap = false})
+-- map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, noremap = false })
+-- map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, noremap = false })
 
+map("v", "<Leader>y", "\"+y", { silent = true, noremap = false })
 
-
-map("v", "J", ":m '>+1<CR>gv=gv", {silent = true, noremap = false})
-map("v", "K", ":m '<-2<CR>gv=gv", {silent = true, noremap = false})
-
-map("v", "<Leader>y", "\"+y" , {silent = true, noremap = false})
 
 -- vim.keymap.set("n", "J", "mzJ`z")
 
 
+-- Undo Tree
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { silent = true, noremap = true })
 
--- map("n","<C-f>",":NvimTreeToggle <CR>")
--- map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
--- map("n","<Leader>t",":NvimTreeToggle <CR>")
+-- Coc format the entire buffe
+vim.keymap.set('n', '<leader>F', vim.cmd.Format, { silent = true, noremap = true })
 
--- map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
--- See in vimscript keymap for <Leader>t
--- map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
+
 
 map("n","<Leader>g",":GFiles <CR>")
 map("n","<Leader>G",":GGrep <CR>")
@@ -88,6 +71,33 @@ map('n','<Leader>d',"<Plug>(ale_previous_wrap)")
 map("n","<Leader>e","<Plug>(ale_next_wrap)")
 
 
+
+vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
+
+
+--  CP
+
+-- function close_io_buffers is defined in globals.lua
+map('n','@c',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
+map('n','@C',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
+map('n','@d',':lua close_io_buffers() <CR>', { silent = true, noremap = true })
+map('n','@D',':lua close_io_buffers() <CR>', { silent = true, noremap = true })
+
+
+
+
+
+-- Unused Keymaps
+
+-- map("n","<C-f>",":NvimTreeToggle <CR>")
+-- map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
+-- map("n","<Leader>t",":NvimTreeToggle <CR>")
+
+-- map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
+-- See in vimscript keymap for <Leader>t
+-- map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
+
+
 -- Go to normal mode without pressing escape
 -- map("i","jk","<Esc>")
 -- map("i","kj","<Esc>")
@@ -100,36 +110,14 @@ map("n","<Leader>e","<Plug>(ale_next_wrap)")
 -- map("n", "<Leader>?", ":WhichKey ','<CR>")
 -- map("n", "<Leader>a", ":cclose<CR>")
 
-vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
 
 
---  CP
-
-map('n','@c',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
-map('n','@C',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
-map('n','@d',':lua close_io_buffers() <CR>', { silent = true, noremap = true })
-map('n','@D',':lua close_io_buffers() <CR>', { silent = true, noremap = true })
 
 
--- function has been moved to globals.lua
--- function close_io_buffers()
---   -- Get all open buffer handles
---   local buffers = vim.api.nvim_list_bufs()
 
---   -- Loop through all open buffers
---   for _, buf in ipairs(buffers) do
---     -- Get the buffer name
---     local name = vim.api.nvim_buf_get_name(buf)
 
---     -- Extract the file name from the full path
---     local file_name = vim.fn.fnamemodify(name, ":t")
 
---     -- Check if the file name matches "input.txt" or "output.txt"
---     if file_name == "input.txt" or file_name == "output.txt" then
---       -- Close the buffer
---       vim.api.nvim_buf_delete(buf, {force = true})
---     end
---   end
--- end
+
+
 
 
