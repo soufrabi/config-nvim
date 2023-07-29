@@ -68,9 +68,9 @@ map("n","<Leader>b",":tabnew | term <CR>")
 
 
 -- Move the cursor to next window
-map("n","<C-a>","<C-w>w")
-map("i","<C-a>","<Esc><C-w>wi")
-map("v","<C-a>","<Esc><C-w>wi")
+map("n","<C-w>","<C-w>w",{ silent = true, noremap = true } )
+map("i","<C-w>","<Esc><C-w>wi",{ silent = true, noremap = true } )
+map("v","<C-w>","<Esc><C-w>wi",{ silent = true, noremap = true } )
 
 
 -- ALE linter
