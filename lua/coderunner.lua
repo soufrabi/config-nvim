@@ -2,13 +2,13 @@
 
 
 -- local function CodeRunner()
---     local bufnr = vim.api.nvim_get_current_buf() 
-    -- local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
-    --
-     -- if ft == "cpp"then
-     --     map("n","<F5>",":term g++ % && ./a.out <CR>")
-     -- end
- -- end
+--     local bufnr = vim.api.nvim_get_current_buf()
+-- local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
+--
+-- if ft == "cpp"then
+--     map("n","<F5>",":term g++ % && ./a.out <CR>")
+-- end
+-- end
 
 
 -- map('n', 'com' , ':! mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR>')
@@ -56,72 +56,78 @@
 
 
 local function DisableRun()
+    map('n', '<F5>', '<Nop>')
+    map('i', '<F5>', '<Nop>')
+    map('v', '<F5>', '<Nop>')
 
-map('n','<F5>','<Nop>')
-map('i','<F5>','<Nop>')
-map('v','<F5>','<Nop>')
+    map('n', '<F6>', '<Nop>')
+    map('i', '<F6>', '<Nop>')
+    map('v', '<F6>', '<Nop>')
 
-map('n','<F6>','<Nop>')
-map('i','<F6>','<Nop>')
-map('v','<F6>','<Nop>')
-
-map('n','<F7>','<Nop>')
-map('i','<F7>','<Nop>')
-map('v','<F7>','<Nop>')
-
+    map('n', '<F7>', '<Nop>')
+    map('i', '<F7>', '<Nop>')
+    map('v', '<F7>', '<Nop>')
 end
 
 
-local function CRun(fp,dir,fnwe,compiler)
+local function CRun(fp, dir, fnwe, compiler)
+    -- nnoremap <F5> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
+    -- map('n','<C-\\>',':term mkdir -p '+'%:p:h'+'/build && g++ -g '+'%:p'+' -o '+'%:p:h'+'/build/'+'%:t:r'+' && '+'%:p:h'+'/build/'+'%:t:r'+' <CR>')
+    --
 
--- nnoremap <F5> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
--- map('n','<C-\\>',':term mkdir -p '+'%:p:h'+'/build && g++ -g '+'%:p'+' -o '+'%:p:h'+'/build/'+'%:t:r'+' && '+'%:p:h'+'/build/'+'%:t:r'+' <CR>')
---
+    -- map('n','<C-\\>',':term mkdir -p '..dir..'/build && g++ -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
 
--- map('n','<C-\\>',':term mkdir -p '..dir..'/build && g++ -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
+    local comF5 = ':tabnew | term mkdir -p ' ..
+        dir .. '/build && ' .. compiler .. ' -g ' .. fp ..
+        ' -o ' .. dir .. '/build/' .. fnwe .. ' && ' .. dir .. '/build/' .. fnwe .. ' <CR>'
+    local comF6 = ':! mkdir -p ' ..
+        dir .. '/build && ' .. compiler .. ' -g ' .. fp ..
+        ' -o ' .. dir .. '/build/' .. fnwe .. ' && ' .. dir .. '/build/' .. fnwe .. ' <CR>'
+    local comF7 = ':tabnew | term mkdir -p ' ..
+        dir ..
+        '/build && ' .. compiler ..
+        ' -g ' .. fp .. ' -o ' .. dir .. '/build/' .. fnwe .. ' && gdb -tui -q ' .. dir .. '/build/' .. fnwe .. ' <CR>'
+
+    map('n', '<F5>', comF5)
+    map('i', '<F5>', '<Esc> ' .. comF5)
+    map('v', '<F5>', '<Esc> ' .. comF5)
 
 
-map('n','<F5>',':tabnew | term mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
-map('i','<F5>','<Esc> :tabnew | term mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
-map('v','<F5>','<Esc> :tabnew | term mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
+    map('n', '<F6>', comF6)
+    map('i', '<F6>', '<Esc >' .. comF6)
+    map('v', '<F6>', '<Esc >' .. comF6)
 
 
-map('n','<F6>',':! mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
-map('i','<F6>',':! mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
-map('v','<F6>',':! mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
-
-
-map('n','<F7>',':tabnew | term mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && gdb -tui -q '..dir..'/build/'..fnwe..' <CR>')
-map('i','<F7>','<Esc> :tabnew | term mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && gdb -tui -q '..dir..'/build/'..fnwe..' <CR>')
-map('v','<F7>','<Esc> :tabnew | term mkdir -p '..dir..'/build && '..compiler..' -g '..fp..' -o '..dir..'/build/'..fnwe..' && gdb -tui -q '..dir..'/build/'..fnwe..' <CR>')
-
+    map('n', '<F7>', comF7)
+    map('i', '<F7>', '<Esc> ' .. comF7)
+    map('v', '<F7>', '<Esc> ' .. comF7)
 end
 
-local function SimpleRun(fp,app)
+local function SimpleRun(fp, app)
+    local comF5 = ':tabnew | term ' .. app .. ' ' .. fp .. ' <CR>'
 
-map('n','<F5>',':tabnew | term '..app..' '..fp..' <CR>')
-map('i','<F5>','<Esc> :tabnew | term '..app..' '..fp..' <CR>')
-map('v','<F5>','<Esc> :tabnew | term '..app..' '..fp..' <CR>')
-
+    map('n', '<F5>', comF5)
+    map('i', '<F5>', '<Esc> ' .. comF5)
+    map('v', '<F5>', '<Esc> ' .. comF5)
 end
 
 
 
 local function markdownPreview()
+    local comF6 = ':MarkdownPreview <CR>'
 
-map('n','<F6>',':MarkdownPreview <CR>')
-map('i','<F6>','<Esc> :MarkdownPreview <CR>')
-map('v','<F6>','<Esc> :MarkdownPreview <CR>')
-
+    map('n', '<F6>', comF6)
+    map('i', '<F6>', '<Esc> ' .. comF6)
+    map('v', '<F6>', '<Esc> ' .. comF6)
 end
 
 
-local coderunner = vim.api.nvim_create_augroup("coderunner",{clear=true})
+local coderunner = vim.api.nvim_create_augroup("coderunner", { clear = true })
 
 
-vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua"},
-    callback=function()
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = { "*.sh", "*.java", "*.py", "*.md", "*.go", "*.rs", "*.dart", "*.lua" },
+    callback = function()
         -- print (vim.bo.filetype)
         local fp = vim.fn.expand('%:p')
 
@@ -132,34 +138,33 @@ vim.api.nvim_create_autocmd("BufEnter",{
         end
 
         if vim.bo.filetype == "sh" then
-            SimpleRun(fp,'bash')
+            SimpleRun(fp, 'bash')
         elseif vim.bo.filetype == "java" then
-            SimpleRun(fp,'java')
+            SimpleRun(fp, 'java')
         elseif vim.bo.filetype == "python" then
-            SimpleRun(fp,'python')
+            SimpleRun(fp, 'python')
         elseif vim.bo.filetype == "go" then
-            SimpleRun(fp,'go')
+            SimpleRun(fp, 'go run')
         elseif vim.bo.filetype == "markdown" then
-            SimpleRun(fp,'glow')
+            SimpleRun(fp, 'glow')
             markdownPreview()
         elseif vim.bo.filetype == "rust" then
-            SimpleRun(fp,'rust')
+            SimpleRun(fp, 'rust')
         elseif vim.bo.filetype == "dart" then
-            SimpleRun(fp,'dart')
+            SimpleRun(fp, 'dart')
         elseif vim.bo.filetype == "lua" then
-            SimpleRun(fp,'lua')
+            SimpleRun(fp, 'lua')
         elseif vim.bo.filetype == "tex" then
-            SimpleRun(fp,'xetex')
+            SimpleRun(fp, 'xetex')
         end
-
     end,
-    group=coderunner
+    group = coderunner
 })
 
 
-vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"*.c","*.cpp"},
-    callback=function()
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = { "*.c", "*.cpp" },
+    callback = function()
         -- print (vim.bo.filetype)
         local fp = vim.fn.expand('%:p')
         local dir = vim.fn.expand('%:p:h')
@@ -174,46 +179,43 @@ vim.api.nvim_create_autocmd("BufEnter",{
         end
 
         if vim.bo.filetype == "cpp" then
-            CRun(fp,dir,fnwe,'g++')
+            CRun(fp, dir, fnwe, 'g++')
         elseif vim.bo.filetype == "c" then
-            CRun(fp,dir,fnwe,'gcc')
+            CRun(fp, dir, fnwe, 'gcc')
         end
-
     end,
-    group=coderunner
+    group = coderunner
 })
 
 
-vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"NERD_tree_*","fugitive://*","NvimTree_*"},
-    callback=function()
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = { "NERD_tree_*", "fugitive://*", "NvimTree_*" },
+    callback = function()
         -- print ("DisableRun "..vim.bo.filetype)
 
         DisableRun()
     end,
-    group=coderunner
+    group = coderunner
 })
 
 
-vim.api.nvim_create_autocmd("TermOpen",{
-    pattern = {"*"},
-    callback=function()
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = { "*" },
+    callback = function()
         -- print ("DisableRun "..vim.bo.filetype)
 
         DisableRun()
     end,
-    group=coderunner
+    group = coderunner
 })
 
 
-vim.api.nvim_create_autocmd("BufLeave",{
-    pattern = {"*.c","*.cpp","*.sh","*.java","*.py",".md","*.go","*.rs","*.dart",".lua","*.tex"},
-    callback=function()
+vim.api.nvim_create_autocmd("BufLeave", {
+    pattern = { "*.c", "*.cpp", "*.sh", "*.java", "*.py", ".md", "*.go", "*.rs", "*.dart", ".lua", "*.tex" },
+    callback = function()
         -- print ("DisableRun "..vim.bo.filetype)
 
         DisableRun()
     end,
-    group=coderunner
+    group = coderunner
 })
-
-
