@@ -88,11 +88,11 @@ inoremap <F5> <Esc>:term glow %<CR>
 vnoremap <F5> <Esc>:term glow %<CR> 
 " visual mode: escape to normal and run
 
-nnoremap <F6> :MarkdownPreviewToggle<CR> 
+nnoremap <F6> :MarkdownPreview<CR> 
 " normal mode: run
-inoremap <F6> <Esc> :MarkdownPreviewToggle<CR>
+inoremap <F6> <Esc> :MarkdownPreview<CR>
 " insert mode: escape to normal and run
-vnoremap <F6> <Esc> :MarkdownPreviewToggle<CR> 
+vnoremap <F6> <Esc> :MarkdownPreview<CR> 
 " visual mode: escape to normal and run
 
 endfunction
