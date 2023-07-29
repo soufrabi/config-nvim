@@ -33,6 +33,31 @@ require('catppuccin-config')
 require('colors-config')
 
 
+local function command_exists(command)
+    local exit_status = os.execute("which " .. command .. " >/dev/null 2>&1")
+    return exit_status == 0
+end
+
+if command_exists("ascii-image-converter") then
+    -- print("ascii-image-converter command exists!")
+    -- Image Viewer using Ascii art plugin
+    require('image-samodostal')
+else
+    -- print("ascii-image-converter command does not exist!")
+end
+
+
+
+
+if command_exists("chafa") then
+    -- print("chafa command exists!")
+    -- Image preview using Chafa
+    -- Needs chafa installed
+    require('image-previewer-custom')
+else
+    -- print("chafa command does not exist!")
+end
+
 
 
 -- Vim script files

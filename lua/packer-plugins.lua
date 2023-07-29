@@ -92,8 +92,17 @@ return require('packer').startup(function(use)
 		end
 	}
 
+
 	-- Catppuccin
 	-- colorscheme works better with true colorsupport
 	use { "catppuccin/nvim", as = "catppuccin" }
+
+	-- Image Viewer using Ascii art
+	use {
+		'samodostal/image.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
+	}
 
 end)
