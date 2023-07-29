@@ -40,5 +40,8 @@ set.relativenumber=false
 set.cursorline = true
 
 
+-- colorscheme
+vim.cmd("colorscheme Dark")
+-- vim.cmd("colorscheme brighton")
 
 

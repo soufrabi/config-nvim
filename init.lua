@@ -23,6 +23,7 @@ require('general-python')
 
 require('coderunner')
 require('auto-commands')
+require('telescope-config')
 
 
 vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')

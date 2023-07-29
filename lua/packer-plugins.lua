@@ -41,6 +41,9 @@ return require('packer').startup(function(use)
     -- Gruvbox
     -- use {'morhetz/gruvbox'}
 
+	-- Vim - colorschemes
+	use{'flazz/vim-colorschemes'}
+
 	--Indent line
 	use {'Yggdroot/indentLine'}
 
@@ -63,6 +66,13 @@ return require('packer').startup(function(use)
 	-- Fzf
 	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
 	use 'junegunn/fzf.vim'
+
+	use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	-- or                            , branch = '0.1.x',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
 
 	-- Vim bookmarks
 	use {'MattesGroeger/vim-bookmarks'}
