@@ -42,7 +42,8 @@ map("n","<Leader>j","<C-d>")
 -- map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
 
 -- map("n","<Leader>t",":NvimTreeToggle <CR>")
-map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
+-- map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
+-- see in vimscript keymap for <Leader>t
 map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
 
 map("n","<Leader>g",":GFiles <CR>")
