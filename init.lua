@@ -1,7 +1,7 @@
 -- nvim top level config file
 -- init.lua
 
-
+require('beginning')
 require('packer-plugins')
 
 require('globals')
@@ -34,10 +34,13 @@ require('fzf-config')
 
 
 -- Lsp
--- require('coc-config')
 
-require('lsp-zero-config')
-require('lua-snips-config')
+if B.useCoc == 1 then
+    require('coc-config')
+else
+    require('lsp-zero-config')
+    require('lua-snips-config')
+end
 
 
 -- File managers
