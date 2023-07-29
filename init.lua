@@ -1,6 +1,6 @@
 -- nvim top level config file
 
-
+require('globals')
 require('general')
 require('keymaps')
 

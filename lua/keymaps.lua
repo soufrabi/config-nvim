@@ -91,27 +91,31 @@ vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
 
 --  CP
 
-map('n','@c',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true })
-map('n','@d',':lua close_io_buffers() <CR>', { silent = true })
+map('n','@c',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
+map('n','@C',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
+map('n','@d',':lua close_io_buffers() <CR>', { silent = true, noremap = true })
+map('n','@D',':lua close_io_buffers() <CR>', { silent = true, noremap = true })
 
-function close_io_buffers()
-  -- Get all open buffer handles
-  local buffers = vim.api.nvim_list_bufs()
 
-  -- Loop through all open buffers
-  for _, buf in ipairs(buffers) do
-    -- Get the buffer name
-    local name = vim.api.nvim_buf_get_name(buf)
+-- function has been moved to globals.lua
+-- function close_io_buffers()
+--   -- Get all open buffer handles
+--   local buffers = vim.api.nvim_list_bufs()
 
-    -- Extract the file name from the full path
-    local file_name = vim.fn.fnamemodify(name, ":t")
+--   -- Loop through all open buffers
+--   for _, buf in ipairs(buffers) do
+--     -- Get the buffer name
+--     local name = vim.api.nvim_buf_get_name(buf)
 
-    -- Check if the file name matches "input.txt" or "output.txt"
-    if file_name == "input.txt" or file_name == "output.txt" then
-      -- Close the buffer
-      vim.api.nvim_buf_delete(buf, {force = true})
-    end
-  end
-end
+--     -- Extract the file name from the full path
+--     local file_name = vim.fn.fnamemodify(name, ":t")
+
+--     -- Check if the file name matches "input.txt" or "output.txt"
+--     if file_name == "input.txt" or file_name == "output.txt" then
+--       -- Close the buffer
+--       vim.api.nvim_buf_delete(buf, {force = true})
+--     end
+--   end
+-- end
 
 
