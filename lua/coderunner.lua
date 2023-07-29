@@ -12,7 +12,7 @@ end
 -- map('n', 'com' , ':! mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR>')
 map('n', 'cpp' , ':! mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR>')
 map('n', 'com' , ':term mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR>')
-map('n', 'gcc' , ':term mkdir -p build && gcc -g % -o build/%:r && ./build/%:r<CR>')
+map('n', 'cnp' , ':term mkdir -p build && gcc -g % -o build/%:r && ./build/%:r<CR>')
 map('n', 'gdb' , ':term gdb -tui -q build/%:r<CR>')
 map('n', 'java' , ':term java %<CR>')
 map('n', 'pyt' , ':term python %<CR>')

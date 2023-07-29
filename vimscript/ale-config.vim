@@ -1,6 +1,7 @@
 
 let g:ale_pattern_options = {
 \   '.*\.cpp$': {'ale_enabled': 0},
+\   '.*\.c$': {'ale_enabled': 0},
 \}
 
 
