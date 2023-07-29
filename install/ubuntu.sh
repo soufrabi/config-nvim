@@ -51,12 +51,14 @@ sudo npm i -g neovim
 sudo apt install python3-pip
 pip install venvs
 
-#Install in virtualenv
-python3 -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
 
 # Run this command if the above the command is not working
 # Check version before installing (Its needed for debian systems)
 sudo apt install python3.10-venv
+
+
+#Install in virtualenv
+python3 -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
 
 
 
