@@ -190,7 +190,7 @@ CocInstall coc-tsserver
 ```
 
 
-#### For markdown fies 
+#### For markdown files 
 You need **[iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)** plugin installed
 
 If markdown preview is not working 
