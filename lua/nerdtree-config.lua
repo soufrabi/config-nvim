@@ -29,4 +29,6 @@ vim.api.nvim_command("let NERDTreeAutoDeleteBuffer = 1")
 -- Making it prettier
 vim.api.nvim_command("let NERDTreeMinimalUI = 1")
 vim.api.nvim_command("let NERDTreeDirArrows = 1")
+vim.api.nvim_command("let g:NERDTreeAutoRefresh = 1")
+
 
