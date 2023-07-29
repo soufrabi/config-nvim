@@ -9,7 +9,11 @@ vim.g.mkdp_refresh_slow = 0
 vim.g.mkdp_command_for_global = 0
 vim.g.mkdp_open_to_the_world = 0
 vim.g.mkdp_open_ip = ''
-vim.g.mkdp_browser = ''
+vim.g.mkdp_browser = 'epiphany'
+-- default is 
+-- vim.g.mkdp_browser = ''
+-- for flatpak brave-browser use 
+-- vim.g.mkdp_browser = 'com.brave.Browser'
 vim.g.mkdp_echo_preview_url = 0
 vim.g.mkdp_browserfunc = ''
 vim.g.mkdp_preview_options = {
