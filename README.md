@@ -2,38 +2,48 @@
 
 ## Installation
 
-### For Arch
+#### For Arch
 ```
 sudo pacman -S nvim
 ```
 
-### For Ubuntu
+#### For Ubuntu
 
-#### Snap Store method
+###### Snap Store method
 ```
 sudo snap install nvim --classic
 ```
 
-#### PPA method [link](https://www.linuxcapable.com/how-to-install-neovim-editor-on-ubuntu-22-04-lts/)
+###### PPA method [link](https://www.linuxcapable.com/how-to-install-neovim-editor-on-ubuntu-22-04-lts/)
 
-Before proceeding, ensure your Ubuntu system is up-to-date using the following command.
 ```
+# Make your Ubuntu system up-to-date by using the following command
+
 sudo apt update && sudo apt upgrade -y
-```
-Before proceeding, run the following command to ensure the following dependencies are installed.
-```
+
+# Install the following dependencies
+
 sudo apt install software-properties-common -y
-```
-Import Unstable Neovim PPA
-```
+
+# Import the PPA using the following command
+# Please note that only one version can be installed simultaneously
+# So if you import both stable and unstable versions 
+# Then unstable version will be installed as it is the newest version
+
+# Import Stable Neovim PPA
+
+sudo add-apt-repository ppa:neovim-ppa/stable -y
+
+# Import Unstable Neovim PPA
+
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
-```
-Run an APT update to sync the changes.
-```
+
+# Run an APT update to sync the changes
+
 sudo apt-get update
-```
-With the PPA imported, install the editor.
-```
+
+# With the PPA imported, install the editor
+
 sudo apt install neovim -y
 ```
 
@@ -50,28 +60,37 @@ For Ubuntu
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -
 
 sudo apt-get install nodejs
+
+# If possible update npm
+
+# Install yarn
 sudo npm i -g yarn
 ```
 
 
 ## To use my config file
 
-Clone my repo
+#### Clone this repository
+
+###### Clone using HTTPS method
 ```
-# Clone using HTTPS method
 git clone https://github.com/awesomeDev12/nvim.git ~/.config/nvim
+```
 
-# OR
+OR
 
-# Clone using Github CLI
+###### Clone using Github CLI (Recommended)
+```
 gh repo clone awesomeDev12/nvim ~/.config/nvim
 ```
 
-Install packer plugin manager
+#### Install packer plugin manager
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
+
+### Language Support
 
 #### For cpp
 ```
