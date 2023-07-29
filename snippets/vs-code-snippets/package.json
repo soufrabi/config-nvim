@@ -22,6 +22,12 @@
 			},
 			{
 				"language": [
+					"cpp"
+				],
+				"path": "./snippets/cpp_matrix.json"
+			},
+			{
+				"language": [
 					"c"
 				],
 				"path": "./snippets/c.json"
