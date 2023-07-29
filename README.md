@@ -52,7 +52,10 @@ sudo apt install neovim -y
 For Arch 
 ```
 sudo pacman -S nodejs
+sudo pacman -S npm
+sudo pacman -S npm update
 sudo npm i -g yarn
+sudo npm i -g neovim
 ```
 
 For Ubuntu
@@ -65,6 +68,7 @@ sudo apt-get install nodejs
 
 # Install yarn
 sudo npm i -g yarn
+sudo npm i -g neovim
 ```
 
 
