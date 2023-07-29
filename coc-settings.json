@@ -1,0 +1,7 @@
+{
+	"rust-analyzer.enable": true,
+
+	"rust.all_features": true
+
+
+}

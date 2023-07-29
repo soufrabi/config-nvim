@@ -16,7 +16,8 @@ map("i","<C-q>","<Esc>:qa! <CR>")
 
 
 
-
+map("n","<C-f>",":NvimTreeToggle <CR>")
+map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
 
 
 -- map("n", ",<Space>", ":nohlsearch<CR>", { silent = true })

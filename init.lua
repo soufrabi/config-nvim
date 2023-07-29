@@ -8,8 +8,9 @@ require('keymaps')
 require('packer-plugins')
 
 
-require('plugins-config')
-
 require('nvim-tree-config')
+require('coc-config')
 
-require('nvim-tree').setup {}
+
+
+
