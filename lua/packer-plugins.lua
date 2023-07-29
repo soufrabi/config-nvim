@@ -13,12 +13,15 @@ return require('packer').startup(function(use)
 	--Vim commentary
 	use {'tpope/vim-commentary'}
 
-	--Ale
-	-- use {'dense-analysis/ale'}
+	-- Ale
+	use {'dense-analysis/ale'}
 
 	--Coc
 	use {'neoclide/coc.nvim', branch = 'release'}
 
+	--Ultisnippets
+	-- use {'SirVer/ultisnips'}
+	
 	-- Tree
 	use {'nvim-tree/nvim-tree.lua'}
 
@@ -34,4 +37,7 @@ return require('packer').startup(function(use)
 
     --Gruvbox
     -- use {'morhetz/gruvbox'}
+
+	--Indent line
+	use {'Yggdroot/indentLine'}
 end)

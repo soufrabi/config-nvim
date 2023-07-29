@@ -40,6 +40,16 @@ map("n","<C-a>","<C-w>w")
 map("i","<C-a>","<Esc><C-w>wi")
 
 
+-- ALE linter
+-- for ale linter key binding to move to next error using Ctrl + e
+-- nmap <silent> <C-e> <Plug>(ale_next_wrap)
+-- nnoremap <c-e> <Plug>(ale_next_wrap) 
+-- inoremap <c-e> <Esc> <Plug>(ale_next_wrap) 
+-- vnoremap <c-e> <Esc> <Plug>(ale_next_wrap)
+map('n','<Leader>d',"<Plug>(ale_previous_wrap)")
+map("n","<Leader>e","<Plug>(ale_next_wrap)")
+
+
 -- Go to normal mode without pressing escape
 -- map("i","jk","<Esc>")
 -- map("i","kj","<Esc>")

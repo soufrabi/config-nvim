@@ -10,6 +10,7 @@ require('packer-plugins')
 
 require('nvim-tree-config')
 require('coc-config')
+require('ale-config');
 
 require('coderunner')
 
