@@ -22,6 +22,8 @@ require('markdown-preview-config')
 vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/general.vim')
 vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
+vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
+
 
 local function file_exists(name)
    local f=io.open(name,"r")
