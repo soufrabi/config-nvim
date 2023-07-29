@@ -8,8 +8,9 @@ local function CodeRunner()
     -- end
 end
 
-map('n', 'cpp',':term g++ % -o %:r && ./%:r<CR>')
-map('n', 'gcc' , ':term gcc % -o %:r && ./%:r<CR>')
+map('n', 'cpp',':term g++ -g % -o %:r && ./%:r<CR>')
+map('n', 'gcc' , ':term gcc -g % -o %:r && ./%:r<CR>')
+map('n', 'gdb' , ':term gdb -tui -q %:r<CR>')
 -- map('n', 'py' , ':term python %<cr>')
 -- map('n', 'go' , ':term go run %<cr>')
 -- map('n', 'sh' , ':term bash %<cr>')

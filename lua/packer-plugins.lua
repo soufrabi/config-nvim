@@ -22,4 +22,16 @@ return require('packer').startup(function(use)
 	-- Tree
 	use {'nvim-tree/nvim-tree.lua'}
 
+    --Vim-Airline
+    use {'vim-airline/vim-airline'}
+    use {'vim-airline/vim-airline-themes'}
+
+    --Fugitive
+    use {'tpope/vim-fugitive'}
+
+    --Polyglot
+    use {'sheerun/vim-polyglot'}
+
+    --Gruvbox
+    -- use {'morhetz/gruvbox'}
 end)
