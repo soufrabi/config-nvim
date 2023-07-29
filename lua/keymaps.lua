@@ -91,7 +91,7 @@ vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
 
 --  CP
 
-map('n','@c',':40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true })
+map('n','@c',':lua close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true })
 map('n','@d',':lua close_io_buffers() <CR>', { silent = true })
 
 function close_io_buffers()
