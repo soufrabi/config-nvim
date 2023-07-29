@@ -127,6 +127,7 @@ CocInstall coc-snippets
 ```
 
 Use my snippets
+
 UNIX
 ```
 gh repo clone awesomeDev12/ultisnips ~/.config/coc/ultisnips
