@@ -11,3 +11,8 @@ let g:ale_pattern_options = {
 " \   '.*\.json$': {'ale_enabled': 0},
 " \   '.*some/folder/.*\.js$': {'ale_enabled': 0},
 " \}
+
+
+let g:ale_linters = {
+    \ 'sh': ['language_server'],
+    \ }

@@ -1,7 +1,7 @@
 {
   "clangd.enabled": true,
   "clangd.disableDiagnostics": false,
-  "clangd.disableCompletion": true,
+  "clangd.disableCompletion": false,
   "clangd.disableSnippetCompletion": true,
   "snippets.ultisnips.pythonPrompt": false,
   "jedi.enable": true,
@@ -13,6 +13,14 @@
   "jedi.jediSettings.debug": true,
   "python.pythonPath": "~/venvs/.nvim-venc/bin/python",
   "python.venvPath":["~/venvs/.nvim-venv"],
+    "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
 }
 
 
