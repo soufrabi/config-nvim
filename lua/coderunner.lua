@@ -106,11 +106,21 @@ map('v','<F5>','<Esc> :tabnew | term '..app..' '..fp..' <CR>')
 end
 
 
+
+local function markdownPreview()
+
+map('n','<F6>',':MarkdownPreview <CR>')
+map('i','<F6>','<Esc> :MarkdownPreview <CR>')
+map('v','<F6>','<Esc> :MarkdownPreview <CR>')
+
+end
+
+
 local coderunner = vim.api.nvim_create_augroup("coderunner",{clear=true})
 
 
 vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"*.sh","*.java","*.py","*.md","*.go","*.rust","*.dart","*.lua"},
+    pattern = {"*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua"},
     callback=function()
         -- print (vim.bo.filetype)
         local fp = vim.fn.expand('%:p')
@@ -131,6 +141,7 @@ vim.api.nvim_create_autocmd("BufEnter",{
             SimpleRun(fp,'go')
         elseif vim.bo.filetype == "markdown" then
             SimpleRun(fp,'glow')
+            markdownPreview()
         elseif vim.bo.filetype == "rust" then
             SimpleRun(fp,'rust')
         elseif vim.bo.filetype == "dart" then
@@ -176,7 +187,7 @@ vim.api.nvim_create_autocmd("BufEnter",{
 
 
 vim.api.nvim_create_autocmd("BufLeave",{
-    pattern = {"*.c","*.cpp","*.sh","*.java","*.py",".md","*.go","*.rust","*.dart",".lua","*.tex"},
+    pattern = {"*.c","*.cpp","*.sh","*.java","*.py",".md","*.go","*.rs","*.dart",".lua","*.tex"},
     callback=function()
         -- print ("DisableRun "..vim.bo.filetype)
 
