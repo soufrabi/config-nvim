@@ -4,8 +4,8 @@ vim.opt.writebackup = false
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 -- delays and poor user experience
-vim.opt.updatetime = 300
-
+-- vim.opt.updatetime = 300
+vim.opt.updatetime = 50
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved
 -- vim.opt.signcolumn = "yes"
@@ -37,8 +37,10 @@ keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
-keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+-- keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keyset("n", "<C-d>", "<Plug>(coc-diagnostic-prev)", {silent = true})
+-- keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+keyset("n", "<C-e>", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation
 keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
