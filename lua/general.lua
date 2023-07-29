@@ -51,3 +51,7 @@ vim.cmd("colorscheme Dark")
 -- vim.cmd("colorscheme brighton")
 
 
+
+-- Disables pop menu that opens when you Right-Click
+-- Pressing <RightMouse> extends selection instead of showing popup-menu
+vim.api.nvim_command('set mousemodel=extend')
