@@ -19,8 +19,11 @@ end
 
 function Coderunner(key)
 
-    local fp = vim.fn.expand('%:p')  
+    local fp = vim.fn.expand('%:p')
     local dir = vim.fn.expand('%:p:h')
+    -- File name with extension
+    local fn = vim.fn.expand('%:t')
+    -- File name without extension
     local fnwe = vim.fn.expand('%:t:r')
     local ext = vim.fn.expand('%:e')
     -- print(ext)
@@ -33,6 +36,8 @@ function Coderunner(key)
            exec(string.format('cd %s && mkdir -p build && gcc -g -o build/%s %s && ./build/%s',dir,fnwe,fp,fnwe))
        elseif ext=="cpp" then
            exec(string.format('cd %s && mkdir -p build && g++ -g -o build/%s %s && ./build/%s',dir,fnwe,fp,fnwe))
+       elseif ext=="java" then
+           exec(string.format('cd %s && mkdir -p build && javac %s -d build && cd build && java %s',dir,fn,fnwe))
        elseif ext=="sh" then
            exec(string.format('cd %s && sh %s',dir,fp))
        elseif true then

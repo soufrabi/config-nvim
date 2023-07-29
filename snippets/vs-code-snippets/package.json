@@ -22,13 +22,13 @@
 			},
 			{
 				"language": [
-					"all"
+					"c"
 				],
 				"path": "./snippets/c.json"
 			},
 			{
 				"language": [
-					"all"
+					"python"
 				],
 				"path": "./snippets/python.json"
 			},
@@ -36,7 +36,14 @@
 				"language": [
 					"lua"
 				],
-				"path": "./lua.json"
+				"path": "./snippets/lua.json"
+			},
+
+			{
+				"language": [
+					"java"
+				],
+				"path": "./snippets/java.json"
 			}
 		]
 	}
