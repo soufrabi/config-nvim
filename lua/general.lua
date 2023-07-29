@@ -2,6 +2,12 @@
 
 local set = vim.opt -- set options
 
+-- set.autoread = true
+
+-- vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+--   command = "if mode() != 'c' | checktime | endif",
+--   pattern = { "*" },
+-- })
 
 set.tabstop = 4
 set.softtabstop = 4
