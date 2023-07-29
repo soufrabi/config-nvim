@@ -47,27 +47,26 @@ local function command_exists(command)
     return exit_status == 0
 end
 
-if command_exists("ascii-image-converter") then
-    -- print("ascii-image-converter command exists!")
-    -- Image Viewer using Ascii art plugin
-    require('image-samodostal')
-else
-    -- print("ascii-image-converter command does not exist!")
+
+if globals.getOS() == "Linux" then
+    if command_exists("ascii-image-converter") then
+        -- print("ascii-image-converter command exists!")
+        -- Image Viewer using Ascii art plugin
+        require('image-samodostal')
+    else
+        -- print("ascii-image-converter command does not exist!")
+    end
+
+
+    if command_exists("chafa") then
+        -- print("chafa command exists!")
+        -- Image preview using Chafa
+        -- Needs chafa installed
+        require('image-previewer-custom')
+    else
+        -- print("chafa command does not exist!")
+    end
 end
-
-
-
-
-if command_exists("chafa") then
-    -- print("chafa command exists!")
-    -- Image preview using Chafa
-    -- Needs chafa installed
-    require('image-previewer-custom')
-else
-    -- print("chafa command does not exist!")
-end
-
-
 
 -- Vim script files
 
@@ -99,34 +98,37 @@ end
 -- print(home_dir)
 
 local function file_exists(name)
-   local f=io.open(name,"r")
-   if f~=nil then io.close(f) return true else return false end
+    local f = io.open(name, "r")
+    if f ~= nil then
+        io.close(f)
+        return true
+    else return false end
 end
 
 
 -- Coc color schemes : light or dark
 
-if (file_exists(home_dir..'/.config/nvim/vimscript/coc-config-light.vim'))
+if (file_exists(home_dir .. '/.config/nvim/vimscript/coc-config-light.vim'))
 then
-vim.cmd('source ~/.config/nvim/vimscript/coc-config-light.vim')
+    vim.cmd('source ~/.config/nvim/vimscript/coc-config-light.vim')
 end
 
 
-if (file_exists(home_dir..'/.config/nvim/vimscript/coc-config-dark.vim'))
+if (file_exists(home_dir .. '/.config/nvim/vimscript/coc-config-dark.vim'))
 then
-vim.cmd('source ~/.config/nvim/vimscript/coc-config-dark.vim')
+    vim.cmd('source ~/.config/nvim/vimscript/coc-config-dark.vim')
 end
 
 
 -- Testing
 
-if (file_exists(home_dir..'/.config/nvim/vimscript/test.vim'))
+if (file_exists(home_dir .. '/.config/nvim/vimscript/test.vim'))
 then
-vim.cmd('source ~/.config/nvim/vimscript/test.vim')
+    vim.cmd('source ~/.config/nvim/vimscript/test.vim')
 end
 -- Write test vimscript code in vimscript/test.vim
 
-pcall(require,"test")
+pcall(require, "test")
 -- Write test lua code in lua/test.lua
 
 
@@ -139,6 +141,3 @@ pcall(require,"test")
 -- else
 --    print("lua/test.lua ".."found")
 -- end
-
-
-
