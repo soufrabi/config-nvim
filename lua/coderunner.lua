@@ -57,17 +57,17 @@
 
 local function DisableRun()
 
-map('n','<F5>','Nop')
-map('i','<F5>','Nop')
-map('v','<F5>','Nop')
+map('n','<F5>','<Nop>')
+map('i','<F5>','<Nop>')
+map('v','<F5>','<Nop>')
 
-map('n','<F6>','Nop')
-map('i','<F6>','Nop')
-map('v','<F6>','Nop')
+map('n','<F6>','<Nop>')
+map('i','<F6>','<Nop>')
+map('v','<F6>','<Nop>')
 
-map('n','<F7>','Nop')
-map('i','<F7>','Nop')
-map('v','<F7>','Nop')
+map('n','<F7>','<Nop>')
+map('i','<F7>','<Nop>')
+map('v','<F7>','<Nop>')
 
 end
 
