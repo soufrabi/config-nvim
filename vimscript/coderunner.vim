@@ -27,7 +27,7 @@ vnoremap <F7> <Esc> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:
 endfunction
 
 "autocmd FileType cpp call CppRun()
-autocmd BufNewFile,BufRead *.cpp call CppRun()
+autocmd BufNewFile,BufRead,BufEnter *.cpp call CppRun()
 autocmd BufLeave *.cpp call DisableRun()
 
 
@@ -58,7 +58,7 @@ vnoremap <F7> <Esc> :term mkdir -p %:p:h/build && gcc -g %:p -o %:p:h/build/%:t:
 endfunction
 
 "autocmd FileType c call CRun()
-autocmd BufNewFile,BufRead *.c call CRun()
+autocmd BufNewFile,BufRead,BufEnter *.c call CRun()
 autocmd BufLeave *.c call DisableRun()
 
 
@@ -74,7 +74,7 @@ vnoremap <F5> <Esc>:term bash %<CR>
 endfunction
 
 "autocmd FileType sh call BashRun()
-autocmd BufNewFile,BufRead *.sh call BashRun()
+autocmd BufNewFile,BufRead,BufEnter *.sh call BashRun()
 autocmd BufLeave *.sh call DisableRun()
 
 
@@ -90,7 +90,7 @@ vnoremap <F5> <Esc>:term glow %<CR>
 endfunction
 
 "autocmd FileType markdown call MarkdownRun()
-autocmd BufNewFile,BufRead *.md call MarkdownRun()
+autocmd BufNewFile,BufRead,BufEnter *.md call MarkdownRun()
 autocmd BufLeave *.md call DisableRun()
 
 
@@ -106,7 +106,7 @@ vnoremap <F5> <Esc>:term go %<CR>
 endfunction
 
 "autocmd FileType go call GoRun()
-autocmd BufNewFile,BufRead *.go call GoRun()
+autocmd BufNewFile,BufRead,BufEnter *.go call GoRun()
 autocmd BufLeave *.go call DisableRun()
 
 
@@ -122,7 +122,7 @@ vnoremap <F5> <Esc>:term lua %<CR>
 endfunction
 
 "autocmd FileType lua call LuaRun()
-autocmd BufNewFile,BufRead *.lua call LuaRun()
+autocmd BufNewFile,BufRead,BufEnter *.lua call LuaRun()
 autocmd BufLeave *.lua call DisableRun()
 
 
@@ -138,7 +138,7 @@ vnoremap <F5> <Esc>:term rust %<CR>
 endfunction
 
 "autocmd FileType rust call RustRun()
-autocmd BufNewFile,BufRead *.rust call RustRun()
+autocmd BufNewFile,BufRead,BufEnter *.rust call RustRun()
 autocmd BufLeave *.rust call DisableRun()
 
 
@@ -154,7 +154,7 @@ vnoremap <F5> <Esc>:term node %<CR>
 endfunction
 
 "autocmd FileType javascipt call NodeRun()
-autocmd BufNewFile,BufRead *.js call NodeRun()
+autocmd BufNewFile,BufRead,BufEnter *.js call NodeRun()
 autocmd BufLeave *.js call DisableRun()
 
 " Java
@@ -169,7 +169,7 @@ vnoremap <F5> <Esc>:term java %<CR>
 endfunction
 
 "autocmd FileType java call JavaRun()
-autocmd BufNewFile,BufRead *.java call JavaRun()
+autocmd BufNewFile,BufRead,BufEnter *.java call JavaRun()
 autocmd BufLeave *.java call DisableRun()
 
 
@@ -185,7 +185,7 @@ vnoremap <F5> <Esc>:term dart %<CR>
 endfunction
 
 "autocmd FileType dart call DartRun()
-autocmd BufNewFile,BufRead *.dart call DartRun()
+autocmd BufNewFile,BufRead,BufEnter *.dart call DartRun()
 autocmd BufLeave *.dart call DisableRun()
 
 
