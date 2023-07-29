@@ -11,9 +11,22 @@
   "jedi.diagnostics.didChange": true,
   "jedi.diagnostics.didSave": true,
   "jedi.jediSettings.debug": true,
-  "python.pythonPath": "/home/darklord/venvs/.nvim-venc/bin/python",
-  "python.venvPath":["/home/darklord/venvs/.nvim-venv"]
+  "python.pythonPath": "~/venvs/.nvim-venc/bin/python",
+  "python.venvPath":["~/venvs/.nvim-venv"],
 }
+
+
+
+  // "python.linting.pylintPath": "~/.local/bin/pylint"
+
+  // "python.linting.pylintPath": "~/venvs/.nvim-venv/bin/pylint"
+
+  // "python.pythonPath": "python",
+  // "python.venvPath": "~/venvs/"
+
+  // "python.pythonPath": "/home/darklord/venvs/.nvim-venc/bin/python",
+  // "python.venvPath":["/home/darklord/venvs/.nvim-venv"]
+
 
   // "python.venvPath":["/home/darklord/Desktop/Python-basics/venv"]
 
