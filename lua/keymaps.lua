@@ -54,9 +54,9 @@ vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, s
 
 
 
--- Coc format the entire buffe
-vim.keymap.set('n', '<leader>F', vim.cmd.Format, { silent = true, noremap = true })
 
+-- LspZeroFormat the entire buffer
+vim.keymap.set('n', '<leader>F', "<Esc> :LspZeroFormat <CR>", { silent = true, noremap = true })
 
 
 map("n","<Leader>g",":GFiles <CR>")

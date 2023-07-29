@@ -34,10 +34,10 @@ require('fzf-config')
 
 
 -- Lsp
-require('coc-config')
+-- require('coc-config')
 
--- require('lsp-zero-config')
--- require('lua-snips-config')
+require('lsp-zero-config')
+require('lua-snips-config')
 
 
 -- File managers

@@ -1,0 +1,43 @@
+{
+	"name": "example-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"all"
+				],
+				"path": "./snippets/all.json"
+			},
+			{
+				"language": [
+					"cpp"
+				],
+				"path": "./snippets/cpp.json"
+			},
+			{
+				"language": [
+					"cpp"
+				],
+				"path": "./snippets/cpp_extra.json"
+			},
+			{
+				"language": [
+					"all"
+				],
+				"path": "./snippets/c.json"
+			},
+			{
+				"language": [
+					"all"
+				],
+				"path": "./snippets/python.json"
+			},
+			{
+				"language": [
+					"lua"
+				],
+				"path": "./lua.json"
+			}
+		]
+	}
+}

@@ -192,3 +192,8 @@ keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
 vim.g.coc_snippet_next = '<TAB>'
 vim.g.coc_snippet_prev = '<S-TAB>'
+
+
+
+-- Coc format the entire buffe
+vim.keymap.set('n', '<leader>F', vim.cmd.Format, { silent = true, noremap = true })
