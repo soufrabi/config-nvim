@@ -20,18 +20,22 @@ map("i","<C-q>","<Nop>")
 map("v","<C-q>","<Nop>")
 
 
-map("n", "<C-d>", "<C-d>zz", { silent = true, noremap = false })
-map("n", "<C-u>", "<C-u>zz", { silent = true, noremap = false })
+map("n", "<C-d>", "<C-d>zz", { silent = true, noremap = true })
+map("n", "<C-u>", "<C-u>zz", { silent = true, noremap = true })
 
 
--- map("n", "<Leader>k", "<C-u>zz", { silent = true, noremap = false })
--- map("n", "<Leader>j", "<C-d>zz", { silent = true, noremap = false })
+map("n", "<C-f>", "<C-f>zz", { silent = true, noremap = true })
+map("n", "<C-b>", "<C-b>zz", { silent = true, noremap = true })
+
+-- map("n", "<Leader>k", "<C-u>zz", { silent = true, noremap = true })
+-- map("n", "<Leader>j", "<C-d>zz", { silent = true, noremap = true })
 
 
--- map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, noremap = false })
--- map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, noremap = false })
+-- map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, noremap = true })
+-- map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, noremap = true })
 
-map("v", "<Leader>y", "\"+y", { silent = true, noremap = false })
+map("v", "<leader>y", "\"+y", { silent = true, noremap = true })
+map("n", "<Leader>p", "\"+p", { silent = true, noremap = true })
 
 
 -- vim.keymap.set("n", "J", "mzJ`z")
