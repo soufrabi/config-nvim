@@ -24,6 +24,6 @@
 
 
 " Automatically change to the directory containing the current file, except for fugitive buffers
-autocmd BufEnter * if expand('%:p')!~#'/\.git/\|fugitive/' | execute 'cd ' . expand('%:p:h') | endif
+" autocmd BufEnter * if expand('%:p')!~#'/\.git/\|fugitive/' | execute 'cd ' . expand('%:p:h') | endif
 
 

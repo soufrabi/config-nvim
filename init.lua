@@ -20,12 +20,17 @@ require('nerdtree-config')
 require('markdown-preview-config')
 
 require('general-python')
+require('auto-commands')
+
 
 vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/general.vim')
 vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
 vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
-vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
+
+-- Code runner moved to lua
+-- vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
+
 vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
