@@ -8,33 +8,33 @@ vim.g.bookmark_auto_close = 1
 
 
 local function bookmarkMapKeys()
-    map("n","bm","<Plug>BookmarkToggle", {noremap = true})
-    map("n","bi","<Plug>BookmarkAnnotate", {noremap = true})
-    map("n","ba","<Plug>BookmarkShowAll", {noremap = true})
-    map("n","bn","<Plug>BookmarkNext", {noremap = true})
-    map("n","bp","<Plug>BookmarkPrev", {noremap = true})
-    map("n","bc","<Plug>BookmarkClear", {noremap = true})
-    map("n","bx","<Plug>BookmarkClearAll", {noremap = true})
+    map("n","Bm","<Plug>BookmarkToggle", {noremap = true})
+    map("n","Bi","<Plug>BookmarkAnnotate", {noremap = true})
+    map("n","Ba","<Plug>BookmarkShowAll", {noremap = true})
+    map("n","Bn","<Plug>BookmarkNext", {noremap = true})
+    map("n","Bp","<Plug>BookmarkPrev", {noremap = true})
+    map("n","Bc","<Plug>BookmarkClear", {noremap = true})
+    map("n","Bx","<Plug>BookmarkClearAll", {noremap = true})
 
-    map("n","bkk","<Plug>BookmarkMoveUp", {noremap = true})
-    map("n","bjj","<Plug>BookmarkMoveDown", {noremap = true})
-    map("n","bg","<Plug>BookmarkMoveToLine", {noremap = true})
+    map("n","Bkk","<Plug>BookmarkMoveUp", {noremap = true})
+    map("n","Bjj","<Plug>BookmarkMoveDown", {noremap = true})
+    map("n","Bg","<Plug>BookmarkMoveToLine", {noremap = true})
 end
 
 local function bookmarkUnmapKeys()
 
 
-    map('n', 'bm','<Nop>')
-    map('n', 'bi','<Nop>')
-    map('n', 'bn','<Nop>')
-    map('n', 'bp','<Nop>')
-    map('n', 'ba','<Nop>')
-    map('n', 'bc','<Nop>')
-    map('n', 'bx','<Nop>')
+    map('n', 'Bm','<Nop>')
+    map('n', 'Bi','<Nop>')
+    map('n', 'Bn','<Nop>')
+    map('n', 'Bp','<Nop>')
+    map('n', 'Ba','<Nop>')
+    map('n', 'Bc','<Nop>')
+    map('n', 'Bx','<Nop>')
 
-    map('n', 'bkk','<Nop>')
-    map('n', 'bjj','<Nop>')
-    map('n', 'bg','<Nop>')
+    map('n', 'Bkk','<Nop>')
+    map('n', 'Bjj','<Nop>')
+    map('n', 'Bg','<Nop>')
 
 
     -- vim.api.nvim_del_keymap('n', 'mm')

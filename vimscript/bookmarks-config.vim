@@ -7,17 +7,17 @@ let g:bookmark_sign = '♥'
 " Keymaps
 
 function! BookmarkMapKeys()
-    nnoremap bm <Plug>BookmarkToggle
-    nnoremap bi <Plug>BookmarkAnnotate
-    nnoremap ba <Plug>BookmarkShowAll
-    nnoremap bn <Plug>BookmarkNext
-    nnoremap bp <Plug>BookmarkPrev
-    nnoremap bc <Plug>BookmarkClear
-    nnoremap bx <Plug>BookmarkClearAll
+    nnoremap Bm <Plug>BookmarkToggle
+    nnoremap Bi <Plug>BookmarkAnnotate
+    nnoremap Ba <Plug>BookmarkShowAll
+    nnoremap Bn <Plug>BookmarkNext
+    nnoremap Bp <Plug>BookmarkPrev
+    nnoremap Bc <Plug>BookmarkClear
+    nnoremap Bx <Plug>BookmarkClearAll
 
-    nnoremap bkk <Plug>BookmarkMoveUp
-    nnoremap bjj <Plug>BookmarkMoveDown
-    nnoremap bg <Plug>BookmarkMoveToLine
+    nnoremap Bkk <Plug>BookmarkMoveUp
+    nnoremap Bjj <Plug>BookmarkMoveDown
+    nnoremap Bg <Plug>BookmarkMoveToLine
 endfunction
 
 function! BookmarkUnmapKeys()
@@ -34,17 +34,17 @@ function! BookmarkUnmapKeys()
     " unmap mg
 
 
-    nnoremap bm <Nop>
-    nnoremap bi <Nop>
-    nnoremap bn <Nop>
-    nnoremap bp <Nop>
-    nnoremap ba <Nop>
-    nnoremap bc <Nop>
-    nnoremap bx <Nop>
+    nnoremap Bm <Nop>
+    nnoremap Bi <Nop>
+    nnoremap Bn <Nop>
+    nnoremap Bp <Nop>
+    nnoremap Ba <Nop>
+    nnoremap Bc <Nop>
+    nnoremap Bx <Nop>
 
-    nnoremap bkk <Nop>
-    nnoremap bjj <Nop>
-    nnoremap bg <Nop>
+    nnoremap Bkk <Nop>
+    nnoremap Bjj <Nop>
+    nnoremap Bg <Nop>
 
 
 endfunction
