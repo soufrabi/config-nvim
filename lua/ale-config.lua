@@ -9,5 +9,3 @@ vim.g.ale_sign_warning = '.'
 vim.g.ale_lint_on_enter = 0
 
 
-
-
