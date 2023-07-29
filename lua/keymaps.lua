@@ -43,7 +43,7 @@ map("n","<Leader>j","<C-d>")
 
 -- map("n","<Leader>t",":NvimTreeToggle <CR>")
 map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
-map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
+map("n","<Leader>g",":NERDTreeToggle %:p:h <CR>")
 
 -- open a terminal window at the path to the directory containing the current file
 map("n","<Leader>b",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
