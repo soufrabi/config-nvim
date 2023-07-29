@@ -317,10 +317,10 @@ function NvimTreeToggleVCS()
 
   local isGitDir, gitdir = get_gitdir()
   if isGitDir == false then
-    vim.cmd("NvimTreeFindFileToggle "..home_dir)
+    vim.cmd("NvimTreeFindFileToggle ".. G.home_dir)
   else
     -- print(gitdir)
-    vim.cmd("NvimTreeFindFileToggle "..gitdir)
+    vim.cmd("NvimTreeFindFileToggle ".. gitdir)
   end
 end
 

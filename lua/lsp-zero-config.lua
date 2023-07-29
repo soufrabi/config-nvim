@@ -9,3 +9,9 @@ local lsp = require('lsp-zero').preset({
 lsp.nvim_workspace()
 
 lsp.setup()
+
+
+
+-- Keymaps
+-- LspZeroFormat the entire buffer
+vim.keymap.set('n', '<leader>F', "<Esc> :LspZeroFormat <CR>", { silent = true, noremap = true })
