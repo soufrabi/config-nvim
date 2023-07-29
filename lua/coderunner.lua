@@ -50,7 +50,7 @@ function Coderunner(key)
         if ext=="c" then 
             execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="cpp" then
-            execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
+            execTerm(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="java" then
             execTerm(string.format('cd %s ; mkdir -p build ; javac %s -d build ; cd build ; java %s',dir,fn,fnwe))
         elseif ext=="sh" then
@@ -63,7 +63,7 @@ function Coderunner(key)
         if ext=="c" then 
             execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="cpp" then
-            execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
+            execTerm(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
         end
 
     end
