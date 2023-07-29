@@ -1,4 +1,4 @@
---packer plugins
+-- Packer plugins
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -16,10 +16,10 @@ return require('packer').startup(function(use)
 	-- Ale
 	use {'dense-analysis/ale'}
 
-	--Coc
+	-- Coc
 	use {'neoclide/coc.nvim', branch = 'release'}
 
-	--Ultisnippets
+	-- Ultisnippets
 	-- use {'SirVer/ultisnips'}
 	
 	-- NvimTree
@@ -28,23 +28,23 @@ return require('packer').startup(function(use)
 	-- NerdTree
 	use {'preservim/nerdtree'}
 
-    --Vim-Airline
+    -- Vim-Airline
     use {'vim-airline/vim-airline'}
     use {'vim-airline/vim-airline-themes'}
 
-    --Fugitive
+    -- Fugitive
     use {'tpope/vim-fugitive'}
 
-    --Polyglot
+    -- Polyglot
     use {'sheerun/vim-polyglot'}
 
-    --Gruvbox
+    -- Gruvbox
     -- use {'morhetz/gruvbox'}
 
 	--Indent line
 	use {'Yggdroot/indentLine'}
 
-	--Vim obsession
+	-- Vim obsession
 	use {'tpope/vim-obsession'}
 
 	-- Emmet abbreviation
@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
 	-- Markdown preview
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-	--Fzf
+	-- Fzf
 	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
 	use 'junegunn/fzf.vim'
 end)
