@@ -81,12 +81,8 @@ autocmd BufLeave *.sh call DisableRun()
 " Markdown
 
 function! MarkdownRun()
-nnoremap <F5> :term glow %<CR> 
-" normal mode: run
-inoremap <F5> <Esc>:term glow %<CR>
-" insert mode: escape to normal and run
-vnoremap <F5> <Esc>:term glow %<CR> 
-" visual mode: escape to normal and run
+
+call EnableRunF5('glow')
 
 nnoremap <F6> :MarkdownPreview<CR> 
 " normal mode: run
@@ -226,4 +222,19 @@ endfunction
 
 
 
+function! ExeRunF5(app)
+  let x1 = expand('%:p')
+  execute 'tabnew | term '. a:app . ' '. x1
+endfunction
+
+" nnoremap <F5> :call ExeRunF5('glow')<CR>
+
+function! EnableRunF5(app)
+  execute 'nnoremap <F5> ' . ':call ExeRunF5("' . a:app . '") ' . '<CR>'  
+  " normal mode: run
+  execute 'inoremap <F5> ' . '<Esc> :call ExeRunF5("' . a:app . '")' . '<CR>'
+  " insert mode: escape to normal and run
+  execute 'vnoremap <F5> ' . '<Esc> :call ExeRunF5("' . a:app . '")' . '<CR>'
+  " visual mode: escape to normal and run
+endfunction
 
