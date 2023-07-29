@@ -28,3 +28,12 @@ let g:fzf_colors = {
   \ 'pointer': ['fg', 'fzf_pointer'],                                                                                                                                       
   \ 'spinner': ['fg', 'fzf_spinner'] }
 
+
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+
