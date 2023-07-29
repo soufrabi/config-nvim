@@ -7,3 +7,6 @@ vimscript/coc-config-dark.vim
 # Testing
 lua/test.lua
 vimscript/test.vim
+
+# Undo tree
+undo/

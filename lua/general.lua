@@ -55,3 +55,12 @@ vim.cmd("colorscheme Dark")
 -- Disables pop menu that opens when you Right-Click
 -- Pressing <RightMouse> extends selection instead of showing popup-menu
 vim.api.nvim_command('set mousemodel=extend')
+
+
+-- Enable persistent undo
+vim.cmd('set undofile')
+-- vim.o.undodir = '~/.config/nvim/undo'
+vim.o.undodir = home_dir..'/.config/nvim/undo'
+
+
+
