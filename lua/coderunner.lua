@@ -184,6 +184,26 @@ vim.api.nvim_create_autocmd("BufEnter",{
 })
 
 
+vim.api.nvim_create_autocmd("BufEnter",{
+    pattern = {"NERD_tree_*","fugitive://*"},
+    callback=function()
+        -- print ("DisableRun "..vim.bo.filetype)
+
+        DisableRun()
+    end,
+    group=coderunner
+})
+
+
+vim.api.nvim_create_autocmd("TermOpen",{
+    pattern = {"*"},
+    callback=function()
+        -- print ("DisableRun "..vim.bo.filetype)
+
+        DisableRun()
+    end,
+    group=coderunner
+})
 
 
 vim.api.nvim_create_autocmd("BufLeave",{
