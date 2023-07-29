@@ -1,6 +1,8 @@
 --General configuration neovim
 
 local set = vim.opt -- set options
+
+
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
@@ -23,6 +25,4 @@ set.splitbelow = true
 
 set.nu = true
 -- set.relativenumber=true
-
--- vim.g.mapleader = 
 
