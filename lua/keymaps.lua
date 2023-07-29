@@ -36,8 +36,22 @@ map("v","<C-q>","<Nop>")
 -- map("n",":",";")
 -- map("n",":",";")
 
-map("n","<Leader>k","<C-u>")
-map("n","<Leader>j","<C-d>")
+map("n", "<C-d>", "<C-d>zz", {silent = true, noremap = false})
+map("n", "<C-u>", "<C-u>zz", {silent = true, noremap = false})
+
+
+map("n","<Leader>k","<C-u>zz", {silent = true, noremap = false})
+map("n","<Leader>j","<C-d>zz", {silent = true, noremap = false})
+
+
+
+map("v", "J", ":m '>+1<CR>gv=gv", {silent = true, noremap = false})
+map("v", "K", ":m '<-2<CR>gv=gv", {silent = true, noremap = false})
+
+map("v", "<Leader>y", "\"+y" , {silent = true, noremap = false})
+
+-- vim.keymap.set("n", "J", "mzJ`z")
+
 
 
 -- map("n","<C-f>",":NvimTreeToggle <CR>")
@@ -46,7 +60,7 @@ map("n","<Leader>j","<C-d>")
 
 -- map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
 -- See in vimscript keymap for <Leader>t
-map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
+-- map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
 
 map("n","<Leader>g",":GFiles <CR>")
 map("n","<Leader>G",":GGrep <CR>")
@@ -55,7 +69,7 @@ map("n","<Leader>Z",":FZF ")
 
 -- Open a terminal window at the path to the directory containing the current file
 map("n","<Leader>b",":tabnew | term <CR>")
-map("n","<Leader>B",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
+-- map("n","<Leader>B",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
 
 
 -- Move the cursor to next window
