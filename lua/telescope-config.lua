@@ -60,7 +60,9 @@ vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
 vim.keymap.set('n', '<leader>lg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 
-
+local git_root_dir_command = [[
+    git rev-parse --is-inside-work-tree &>/dev/null && git rev-parse --show-toplevel || pwd
+]]
 
 -- Define your custom command
 function git_files_new()
@@ -68,7 +70,7 @@ function git_files_new()
 
   builtin.find_files({
     prompt_title = "Git Files New",
-    cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1],
+    cwd = vim.fn.systemlist(git_root_dir_command)[1],
    file_ignore_patterns = {"node_modules/", ".git/",'.*.swp'},
 
     hidden = true,
@@ -87,7 +89,7 @@ vim.api.nvim_set_keymap('n', '<leader>fg', ':lua git_files_new()<CR>', { noremap
 function live_grep_new()
   builtin.live_grep({
     prompt_title = "Live Grep New",
-    cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1],
+    cwd = vim.fn.systemlist(git_root_dir_command)[1],
     file_ignore_patterns = { '.git/', 'node_modules/', '.*.swp' },
   })
 end
