@@ -90,6 +90,17 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
+#### For snippets
+
+```
+CocInstall coc-snippets
+```
+
+Use my snippets
+```
+gh repo clone awesomeDev12/ultisnips ~/.config/coc/ultisnips
+```
+
 ### Language Support
 
 #### For cpp
@@ -136,10 +147,11 @@ CocInstall coc-html
 CocInstall coc-css
 ```
 
-For ts
+#### For javascript and typescript
 ```
 CocInstall coc-tsserver
 ```
+
 
 #### For markdown fies 
 You need **iamcco/markdown-preview.nvim** plugin installed
