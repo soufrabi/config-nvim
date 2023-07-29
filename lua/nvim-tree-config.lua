@@ -201,7 +201,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
       },
       git = {
         enable = true,
-        ignore = true,
+        -- ignore = true,
+        ignore = false,
+        -- nvim tree will not ignore files ignored by git
         show_on_dirs = true,
         show_on_open_dirs = true,
         timeout = 400,
