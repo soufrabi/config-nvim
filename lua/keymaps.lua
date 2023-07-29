@@ -42,13 +42,16 @@ map("n","<Leader>j","<C-d>")
 -- map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
 
 -- map("n","<Leader>t",":NvimTreeToggle <CR>")
-map("n","<Leader>t",":NERDTreeToggle <CR>")
-map("n","<Leader>T",":NERDTreeToggle %<CR>")
-map("n","<Leader>l",":lcd %:p:h<CR>")
+map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
+map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
+
+-- open a terminal window at the path to the directory containing the current file
+map("n","<Leader>b",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
 
 
 map("n","<C-a>","<C-w>w")
 map("i","<C-a>","<Esc><C-w>wi")
+map("v","<C-a>","<Esc><C-w>wi")
 
 
 -- ALE linter
