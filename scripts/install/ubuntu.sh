@@ -58,6 +58,7 @@ sudo apt install python3.10-venv
 
 
 #Install in virtualenv
+mkdir -p ~/.venvs
 python3 -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
 
 
