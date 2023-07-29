@@ -50,4 +50,10 @@ return require('packer').startup(function(use)
 	-- Emmet abbreviation
 	use {'mattn/emmet-vim'}
 
+	-- Latex
+	use {'lervag/vimtex'}
+
+	-- Latex preview
+	use {'xuhdev/vim-latex-live-preview'}
+
 end)
