@@ -2,6 +2,6 @@
 
 B = {}
 
-B.useCoc = 0
+B.useCoc = 1
 
 
