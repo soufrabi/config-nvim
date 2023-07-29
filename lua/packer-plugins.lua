@@ -22,8 +22,11 @@ return require('packer').startup(function(use)
 	--Ultisnippets
 	-- use {'SirVer/ultisnips'}
 	
-	-- Tree
-	use {'nvim-tree/nvim-tree.lua'}
+	-- NvimTree
+	-- use {'nvim-tree/nvim-tree.lua'}
+	
+	-- NerdTree
+	use {'preservim/nerdtree'}
 
     --Vim-Airline
     use {'vim-airline/vim-airline'}

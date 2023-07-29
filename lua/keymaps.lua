@@ -38,10 +38,11 @@ map("n","<Leader>k","<C-u>")
 map("n","<Leader>j","<C-d>")
 
 
-map("n","<C-f>",":NvimTreeToggle <CR>")
-map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
+-- map("n","<C-f>",":NvimTreeToggle <CR>")
+-- map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
 
-map("n","<Leader>t",":NvimTreeToggle <CR>")
+-- map("n","<Leader>t",":NvimTreeToggle <CR>")
+map("n","<Leader>t",":NERDTreeToggle <CR>")
 
 
 map("n","<C-a>","<C-w>w")

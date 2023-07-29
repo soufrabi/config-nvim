@@ -8,7 +8,7 @@ require('keymaps')
 require('packer-plugins')
 
 
-require('nvim-tree-config')
+-- require('nvim-tree-config')
 require('coc-config')
 require('ale-config');
 require('indent-line-config')
@@ -16,5 +16,6 @@ require('indent-line-config')
 require('coderunner')
 
 require('emmet-config')
+require('nerdtree-config')
 
 
