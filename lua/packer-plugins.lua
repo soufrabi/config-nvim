@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
 
 
 
-	--Vim commentary
+	-- Vim commentary
 	use {'tpope/vim-commentary'}
 
 	-- Ale
@@ -74,6 +74,7 @@ return require('packer').startup(function(use)
 	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
 	use 'junegunn/fzf.vim'
 
+	-- nvim-telescope
 	use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	-- or                            , branch = '0.1.x',
