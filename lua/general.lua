@@ -29,8 +29,10 @@ set.scrolloff = 8
 set.splitright = true
 set.splitbelow = true
 
+-- line numbering
 set.nu = true
-set.relativenumber=true
+-- set.relativenumber=true
+set.relativenumber=false
 
 -- vim.g.python3_host_prog = '/usr/bin/python3'
 
