@@ -3,36 +3,38 @@
 vim.g.bookmark_highlight_lines = 1
 -- disable all default key bindings of vim-bookmarks plugin
 vim.g.bookmark_no_default_key_mappings = 1
+-- Automatically close bookmarks split when jumping to a bookmark
+vim.g.bookmark_auto_close = 1
 
 
 local function bookmarkMapKeys()
-    map("n","mm","<Plug>BookmarkToggle", {noremap = true})
-    map("n","mi","<Plug>BookmarkAnnotate", {noremap = true})
-    map("n","ma","<Plug>BookmarkShowAll", {noremap = true})
-    map("n","mn","<Plug>BookmarkNext", {noremap = true})
-    map("n","mp","<Plug>BookmarkPrev", {noremap = true})
-    map("n","mc","<Plug>BookmarkClear", {noremap = true})
-    map("n","mx","<Plug>BookmarkClearAll", {noremap = true})
+    map("n","bm","<Plug>BookmarkToggle", {noremap = true})
+    map("n","bi","<Plug>BookmarkAnnotate", {noremap = true})
+    map("n","ba","<Plug>BookmarkShowAll", {noremap = true})
+    map("n","bn","<Plug>BookmarkNext", {noremap = true})
+    map("n","bp","<Plug>BookmarkPrev", {noremap = true})
+    map("n","bc","<Plug>BookmarkClear", {noremap = true})
+    map("n","bx","<Plug>BookmarkClearAll", {noremap = true})
 
-    map("n","mkk","<Plug>BookmarkMoveUp", {noremap = true})
-    map("n","mjj","<Plug>BookmarkMoveDown", {noremap = true})
-    map("n","mg","<Plug>BookmarkMoveToLine", {noremap = true})
+    map("n","bkk","<Plug>BookmarkMoveUp", {noremap = true})
+    map("n","bjj","<Plug>BookmarkMoveDown", {noremap = true})
+    map("n","bg","<Plug>BookmarkMoveToLine", {noremap = true})
 end
 
 local function bookmarkUnmapKeys()
 
 
-    map('n', 'mm','<Nop>')
-    map('n', 'mi','<Nop>')
-    map('n', 'mn','<Nop>')
-    map('n', 'mp','<Nop>')
-    map('n', 'ma','<Nop>')
-    map('n', 'mc','<Nop>')
-    map('n', 'mx','<Nop>')
+    map('n', 'bm','<Nop>')
+    map('n', 'bi','<Nop>')
+    map('n', 'bn','<Nop>')
+    map('n', 'bp','<Nop>')
+    map('n', 'ba','<Nop>')
+    map('n', 'bc','<Nop>')
+    map('n', 'bx','<Nop>')
 
-    map('n', 'mkk','<Nop>')
-    map('n', 'mjj','<Nop>')
-    map('n', 'mg','<Nop>')
+    map('n', 'bkk','<Nop>')
+    map('n', 'bjj','<Nop>')
+    map('n', 'bg','<Nop>')
 
 
     -- vim.api.nvim_del_keymap('n', 'mm')

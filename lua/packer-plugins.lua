@@ -105,4 +105,9 @@ return require('packer').startup(function(use)
 		},
 	}
 
+	-- Marks plugin 
+	-- use { "chentoast/marks.nvim" }
+	-- Unable to delete marks properly for some representation
+	-- Not a problem of the plugin
+
 end)

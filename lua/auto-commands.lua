@@ -92,9 +92,12 @@ vim.api.nvim_create_autocmd("BufWinLeave",{
             return
         end
 
+        --- Exclude marks from session files
+        -- vim.api.nvim_command('set sessionoptions-=marks')
+
         -- vim.api.nvim_command('mkview')
         -- pcall(vim.api.nvim_command,'mkview')
-        local ok, errorMsg = pcall(vim.api.nvim_command,'mkview')
+        local ok, errorMsg = pcall(vim.api.nvim_command, 'mkview')
         -- if not ok then
         --     print(errorMsg)
         -- end

@@ -31,6 +31,7 @@ require('telescope-config')
 -- Works better with true color support
 require('catppuccin-config')
 require('colors-config')
+-- require('marks-config')
 
 
 local function command_exists(command)
