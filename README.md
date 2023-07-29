@@ -1,5 +1,119 @@
 # Neovim Config
 
+## Installation
+
+For Arch
+```
+sudo pacman -S nvim
+```
+
+For Ubuntu
+```
+sudo snap install nvim --classic
+```
+
+Also install nodejs (for coc.nvim)
+
+For Arch 
+```
+sudo pacman -S nodejs
+sudo npm i -g yarn
+```
+
+For Ubuntu
+```
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash -
+
+sudo apt-get install nodejs
+sudo npm i -g yarn
+```
+
+
+## To use my config file
+
+Clone my repo
+```
+# Clone using HTTPS method
+git clone https://github.com/awesomeDev12/nvim.git ~/.config/nvim
+
+# OR
+
+# Clone using Github CLI
+gh repo clone awesomeDev12/nvim ~/.config/nvim
+```
+
+Install packer plugin manager
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+#### For cpp
+```
+CocInstall coc-clangd
+CocCommand clangd.install
+```
+Remember to comment out the path to clangd in coc-settings.json
+for consistency among devices
+
+#### For python
+```
+CocInstall coc-jedi
+CocInstall coc-pyright
+```
+
+For Ubuntu
+```
+sudo apt install python3-pip
+pip install venvs
+
+#Install in virtualenv
+python3 -m venv ~/venvs/.nvim-venv && source ~/venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
+
+# Run this command if the above the command is not working
+# Check version before installing (Its needed for debian systems)
+sudo apt install python3.10-venv
+```
+
+For Arch
+```
+sudo pacman -S python-pip
+pip install venvs
+
+#Install in virtualenv
+python -m venv ~/venvs/.nvim-venv && source ~/venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
+```
+
+
+
+#### For html,css
+```
+CocInstall coc-html
+CocInstall coc-css
+```
+
+For ts
+```
+CocInstall coc-tsserver
+```
+
+#### For markdown fies 
+You need **iamcco/markdown-preview.nvim** plugin installed
+
+If markdown preview is not working 
+Then reinstall this plugin after installing yarn 
+
+- Comment out the plugin name in lua/packer-plugins.lua
+- Run :PackerSync
+- Delete the plugin
+
+- Uncomment the plugin name in lua/packer_plugins.lua
+- Restart nvim
+- Run :PackerSync
+
+
+## My Reference for Python
+
 Create a virtualenv
 ```
 python -m venv ~/venvs/.nvim-venv && source ~/venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
