@@ -2,7 +2,6 @@
 
 -- Automatically change to the directory containing the current file, except for fugitive and terminal buffers
 
-file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt"}
 
 
 function IsNonCodeBuffer(str)
@@ -45,6 +44,9 @@ vim.api.nvim_create_autocmd("BufEnter",{
 
 
 -- Folds
+
+local file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt"}
+-- file types in which folds will be saved
 
 local folds = vim.api.nvim_create_augroup("folds",{clear=true})
 

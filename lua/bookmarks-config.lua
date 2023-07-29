@@ -84,6 +84,9 @@ local bookmarks = vim.api.nvim_create_augroup("bookmarks",{clear=true})
 
 
 
+local file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt"}
+-- file types in which bookmarks will be allowed
+
 vim.api.nvim_create_autocmd("BufEnter",{
     pattern = file_types,
     callback=function ()
