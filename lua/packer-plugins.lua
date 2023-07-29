@@ -75,6 +75,12 @@ return require('packer').startup(function(use)
 
 
 	-- Vim bookmarks
-	-- use {'MattesGroeger/vim-bookmarks'}
+	use {'MattesGroeger/vim-bookmarks'}
 
+	-- Folds
+	use { 'anuvyklack/pretty-fold.nvim',
+		config = function()
+			require('pretty-fold').setup()
+		end
+	}
 end)

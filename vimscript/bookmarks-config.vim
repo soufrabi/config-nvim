@@ -35,6 +35,6 @@ function! BookmarkUnmapKeys()
 endfunction
 
 " autocmd BufEnter * :call BookmarkMapKeys()
-" autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 

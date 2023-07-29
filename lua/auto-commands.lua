@@ -2,6 +2,8 @@
 
 -- Automatically change to the directory containing the current file, except for fugitive and terminal buffers
 
+file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt"}
+
 
 function IsNonCodeBuffer(str)
     -- print(str)
@@ -37,5 +39,51 @@ vim.api.nvim_create_autocmd("BufEnter",{
 
     end,
     group=cd
+})
+
+
+
+
+-- Folds
+
+local folds = vim.api.nvim_create_augroup("folds",{clear=true})
+
+vim.api.nvim_create_autocmd("BufWinEnter",{
+    pattern = file_types,
+    callback=function()
+        -- print (vim.bo.filetype)
+        local fp = vim.fn.expand('%:p')
+
+        -- fp is absolute file path
+
+        if IsNonCodeBuffer(fp) then
+            return
+        end
+
+        vim.api.nvim_command('silent! loadview')
+
+    end,
+    group=folds
+})
+
+
+
+
+vim.api.nvim_create_autocmd("BufWinLeave",{
+    pattern = file_types,
+    callback=function()
+        -- print (vim.bo.filetype)
+        local fp = vim.fn.expand('%:p')
+
+        -- fp is absolute file path
+
+        if IsNonCodeBuffer(fp) then
+            return
+        end
+
+        vim.api.nvim_command('mkview')
+
+    end,
+    group=folds
 })
 

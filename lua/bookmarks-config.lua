@@ -21,40 +21,103 @@ end
 
 local function bookmarkUnmapKeys()
 
-    vim.api.nvim_del_keymap('n', 'mm')
-    vim.api.nvim_del_keymap('n', 'mi')
-    vim.api.nvim_del_keymap('n', 'mn')
-    vim.api.nvim_del_keymap('n', 'mp')
-    vim.api.nvim_del_keymap('n', 'ma')
-    vim.api.nvim_del_keymap('n', 'mc')
-    vim.api.nvim_del_keymap('n', 'mx')
 
-    vim.api.nvim_del_keymap('n', 'mkk')
-    vim.api.nvim_del_keymap('n', 'mjj')
-    vim.api.nvim_del_keymap('n', 'mg')
+    map('n', 'mm','<Nop>')
+    map('n', 'mi','<Nop>')
+    map('n', 'mn','<Nop>')
+    map('n', 'mp','<Nop>')
+    map('n', 'ma','<Nop>')
+    map('n', 'mc','<Nop>')
+    map('n', 'mx','<Nop>')
+
+    map('n', 'mkk','<Nop>')
+    map('n', 'mjj','<Nop>')
+    map('n', 'mg','<Nop>')
+
+
+    -- vim.api.nvim_del_keymap('n', 'mm')
+    -- vim.api.nvim_del_keymap('n', 'mi')
+    -- vim.api.nvim_del_keymap('n', 'mn')
+    -- vim.api.nvim_del_keymap('n', 'mp')
+    -- vim.api.nvim_del_keymap('n', 'ma')
+    -- vim.api.nvim_del_keymap('n', 'mc')
+    -- vim.api.nvim_del_keymap('n', 'mx')
+
+    -- vim.api.nvim_del_keymap('n', 'mkk')
+    -- vim.api.nvim_del_keymap('n', 'mjj')
+    -- vim.api.nvim_del_keymap('n', 'mg')
 
 end
 
 -- Autocmd to enable and disable bookmarks keymaps
 local bookmarks = vim.api.nvim_create_augroup("bookmarks",{clear=true})
 
+-- vim.api.nvim_create_autocmd("BufEnter",{
+--     pattern = {"*c,*.cpp,*"},
+--     callback=function ()
+
+--        bookmarkMapKeys()
+--     end,
+
+--     group=bookmarks
+-- })
+
+-- vim.api.nvim_create_autocmd("BufEnter",{
+--     pattern = {"NERD_tree_*","fugitive://*"},
+--     callback=function ()
+--         bookmarkUnmapKeys()
+--     end,
+
+--     group=bookmarks
+-- })
+
+
+-- vim.api.nvim_create_autocmd("TermOpen",{
+--     pattern = {"*"},
+--     callback=function ()
+--         bookmarkUnmapKeys()
+--     end,
+
+--     group=bookmarks
+-- })
+
+
+
+
 vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"*"},
+    pattern = file_types,
     callback=function ()
+
+        -- print(vim.fn.expand("%"))
+
        bookmarkMapKeys()
     end,
 
     group=bookmarks
 })
 
-vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"NERD_tree_*","fugitive://*"},
+
+vim.api.nvim_create_autocmd("BufLeave",{
+    pattern = file_types,
     callback=function ()
+
+       bookmarkUnmapKeys()
+    end,
+
+    group=bookmarks
+})
+
+vim.api.nvim_create_autocmd("BufEnter",{
+    pattern = {"*NERD_tree_*","fugitive://*"},
+    callback=function ()
+
+        -- print(vim.fn.expand("%"))
         bookmarkUnmapKeys()
     end,
 
     group=bookmarks
 })
+
 
 
 vim.api.nvim_create_autocmd("TermOpen",{
@@ -65,6 +128,5 @@ vim.api.nvim_create_autocmd("TermOpen",{
 
     group=bookmarks
 })
-
 
 
