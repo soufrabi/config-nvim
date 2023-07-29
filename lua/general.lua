@@ -32,7 +32,7 @@ set.splitbelow = true
 set.nu = true
 set.relativenumber=true
 
-vim.g.python3_host_prog = '/usr/bin/python3'
+-- vim.g.python3_host_prog = '/usr/bin/python3'
 
 set.cursorline = true
 

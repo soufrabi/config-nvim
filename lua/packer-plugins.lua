@@ -54,9 +54,11 @@ return require('packer').startup(function(use)
 	use {'lervag/vimtex'}
 
 	-- Latex preview
-	use {'xuhdev/vim-latex-live-preview'}
+	-- use {'xuhdev/vim-latex-live-preview'}
+	-- doesn't provide linting
 
 	-- Markdown preview
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
 
 end)
