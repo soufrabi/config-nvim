@@ -86,6 +86,8 @@ map("n","<Leader>e","<Plug>(ale_next_wrap)")
 -- map("n", "<Leader>?", ":WhichKey ','<CR>")
 -- map("n", "<Leader>a", ":cclose<CR>")
 
+vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
+
 
 --  CP
 
