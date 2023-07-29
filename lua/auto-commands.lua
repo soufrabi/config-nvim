@@ -83,7 +83,8 @@ vim.api.nvim_create_autocmd("BufWinLeave",{
             return
         end
 
-        vim.api.nvim_command('mkview')
+        -- vim.api.nvim_command('mkview')
+        pcall(vim.api.nvim_command,'mkview')
 
     end,
     group=folds
