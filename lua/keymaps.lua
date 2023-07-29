@@ -8,10 +8,16 @@ function map(mode, lhs, rhs, opts)
 end
 
 map("n","<C-s>",":w <CR>")
-map("i","<C-s>","<Esc>:w <CR>i")
+map("i","<C-s>","<Esc>:w <CR>a")
 
 map("n","<C-q>",":qa! <CR>")
 map("i","<C-q>","<Esc>:qa! <CR>")
+
+
+
+
+
+
 
 -- map("n", ",<Space>", ":nohlsearch<CR>", { silent = true })
 -- map("n", "<Leader>", ":<C-u>WhichKey ','<CR>" { silent = true })
