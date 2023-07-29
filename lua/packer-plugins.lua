@@ -16,8 +16,37 @@ return require('packer').startup(function(use)
 	-- Ale
 	use { 'dense-analysis/ale' }
 
+
 	-- Coc
 	use { 'neoclide/coc.nvim', branch = 'release' }
+
+
+	-- Lsp-zero
+	-- use {
+	-- 'VonHeikemen/lsp-zero.nvim',
+	-- branch = 'v1.x',
+	-- requires = {
+	-- -- LSP Support
+	-- {'neovim/nvim-lspconfig'},             -- Required
+	-- {'williamboman/mason.nvim'},           -- Optional
+	-- {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+	-- -- Autocompletion
+	-- {'hrsh7th/nvim-cmp'},         -- Required
+	-- {'hrsh7th/cmp-nvim-lsp'},     -- Required
+	-- {'hrsh7th/cmp-buffer'},       -- Optional
+	-- {'hrsh7th/cmp-path'},         -- Optional
+	-- {'saadparwaiz1/cmp_luasnip'}, -- Optional
+	-- {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+	-- -- Snippets
+	-- {'L3MON4D3/LuaSnip'},             -- Required
+	-- {'rafamadriz/friendly-snippets'}, -- Optional
+	-- }
+	-- }
+
+
+
 
 	-- Ultisnippets
 	-- use {'SirVer/ultisnips'}
@@ -68,8 +97,12 @@ return require('packer').startup(function(use)
 	-- doesn't provide linting
 
 	-- Markdown preview
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+		ft = { "markdown" },
+	})
 
 	-- Fzf
 	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
@@ -122,6 +155,4 @@ return require('packer').startup(function(use)
 			"nvim-lua/plenary.nvim",
 		},
 	}
-
-
 end)

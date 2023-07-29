@@ -12,7 +12,6 @@ require('keymaps')
 require('nvim-tree-config')
 require('nvim-tree-webdevicons-config')
 
-require('coc-config')
 require('ale-config');
 require('indent-line-config')
 
@@ -32,6 +31,13 @@ require('colors-config')
 require('undotree-config')
 require('vim-commentary-config')
 require('fzf-config')
+
+
+-- Lsp
+require('coc-config')
+
+-- require('lsp-zero-config')
+-- require('lua-snips-config')
 
 
 -- File managers
