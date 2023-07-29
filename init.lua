@@ -46,7 +46,8 @@ vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 
 
 -- Get the path to the home directory
-local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+-- local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+-- Moved to globals.lua
 
 -- Print the home directory path
 -- print(home_dir)

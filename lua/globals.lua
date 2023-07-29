@@ -1,6 +1,11 @@
 -- Globals
 
 
+
+-- Get the path to the home directory
+home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+
+
 --  Detect if the current file is a fugitive or terminal buffer
 
 

@@ -1,2 +1,9 @@
-vim.g.python_host_prog="/home/darklord/venvs/.nvim-venv/bin/python"
-vim.g.python3_host_prog="/home/darklord/venvs/.nvim-venv/bin/python"
+-- General python
+
+
+-- vim.g.python_host_prog="/home/darklord/venvs/.nvim-venv/bin/python"
+-- vim.g.python3_host_prog="/home/darklord/venvs/.nvim-venv/bin/python"
+
+
+vim.g.python_host_prog = home_dir .. "/venvs/.nvim-venv/bin/python"
+vim.g.python3_host_prog = home_dir .. "/venvs/.nvim-venv/bin/python"
