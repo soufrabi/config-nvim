@@ -36,8 +36,8 @@ vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
 
 vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
+vim.cmd('source ~/.config/nvim/vimscript/nerdtree-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
-
 
 
 -- Optional / Device specific files
