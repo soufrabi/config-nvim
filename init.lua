@@ -40,8 +40,12 @@ vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 
 -- Optional / Device specific files
 
-local username = os.getenv("USER")
--- print("The current user is: " .. username)
+
+-- Get the path to the home directory
+local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+
+-- Print the home directory path
+-- print(home_dir)
 
 local function file_exists(name)
    local f=io.open(name,"r")
@@ -51,13 +55,13 @@ end
 
 -- Coc color schemes : light or dark
 
-if (file_exists('/home/'..username..'/.config/nvim/vimscript/coc-config-light.vim'))
+if (file_exists(home_dir..'/.config/nvim/vimscript/coc-config-light.vim'))
 then
 vim.cmd('source ~/.config/nvim/vimscript/coc-config-light.vim')
 end
 
 
-if (file_exists('/home/'..username..'/.config/nvim/vimscript/coc-config-dark.vim'))
+if (file_exists(home_dir..'/.config/nvim/vimscript/coc-config-dark.vim'))
 then
 vim.cmd('source ~/.config/nvim/vimscript/coc-config-dark.vim')
 end
@@ -65,7 +69,7 @@ end
 
 -- Testing
 
-if (file_exists('/home/'..username..'/.config/nvim/vimscript/test.vim'))
+if (file_exists(home_dir..'/.config/nvim/vimscript/test.vim'))
 then
 vim.cmd('source ~/.config/nvim/vimscript/test.vim')
 end
@@ -81,6 +85,8 @@ pcall(require,"test")
 -- if the file does not exist, print an error message
 -- if not ok then
 --   print("Error: " .. "test.lua" .. " not found!")
+-- else
+--    print("lua/test.lua ".."found")
 -- end
 
 
