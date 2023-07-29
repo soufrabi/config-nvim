@@ -15,7 +15,7 @@ map('n', 'com' , ':term mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<C
 map('n', 'gcc' , ':term mkdir -p build && gcc -g % -o build/%:r && ./build/%:r<CR>')
 map('n', 'gdb' , ':term gdb -tui -q build/%:r<CR>')
 map('n', 'java' , ':term java %<CR>')
-map('n', 'python' , ':term python %<CR>')
+map('n', 'pyt' , ':term python %<CR>')
 -- map('n', 'python' , ':! python %<CR>')
 map('n', 'glow' , ':term glow %<CR>')
 
