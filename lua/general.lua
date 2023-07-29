@@ -1,0 +1,28 @@
+--General configuration neovim
+
+local set = vim.opt -- set options
+
+
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+set.expandtab = true
+
+set.smartindent = true
+set.wrap = false
+
+set.swapfile =false
+set.backup = false
+
+set.hlsearch = false
+set.incsearch = true
+
+set.scrolloff = 8
+
+-- vertical and horizontal splits
+set.splitright = true
+set.splitbelow = true
+
+set.nu = true
+set.relativenumber=true
+
