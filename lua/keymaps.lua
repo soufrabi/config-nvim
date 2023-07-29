@@ -1,3 +1,5 @@
+-- Keymaps
+
 -- Functional wrapper for mapping custom keybindings
 function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
@@ -40,20 +42,23 @@ map("n","<Leader>j","<C-d>")
 
 -- map("n","<C-f>",":NvimTreeToggle <CR>")
 -- map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
-
 -- map("n","<Leader>t",":NvimTreeToggle <CR>")
+
 -- map("n","<Leader>t",":NERDTreeToggleVCS %:p:h <CR>")
--- see in vimscript keymap for <Leader>t
+-- See in vimscript keymap for <Leader>t
 map("n","<Leader>T",":NERDTreeToggle %:p:h <CR>")
 
 map("n","<Leader>g",":GFiles <CR>")
 map("n","<Leader>G",":GGrep <CR>")
 map("n","<Leader>z",":FZF <CR>")
+map("n","<Leader>Z",":FZF ")
 
--- open a terminal window at the path to the directory containing the current file
-map("n","<Leader>b",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
+-- Open a terminal window at the path to the directory containing the current file
+map("n","<Leader>b",":tabnew | term <CR>")
+map("n","<Leader>B",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
 
 
+-- Move the cursor to next window
 map("n","<C-a>","<C-w>w")
 map("i","<C-a>","<Esc><C-w>wi")
 map("v","<C-a>","<Esc><C-w>wi")
