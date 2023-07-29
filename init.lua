@@ -26,6 +26,7 @@ vim.cmd('source ~/.config/nvim/vimscript/general.vim')
 vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
 vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
+vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
 
 
 local function file_exists(name)

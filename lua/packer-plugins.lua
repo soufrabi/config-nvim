@@ -60,5 +60,7 @@ return require('packer').startup(function(use)
 	-- Markdown preview
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-
+	--Fzf
+	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
+	use 'junegunn/fzf.vim'
 end)

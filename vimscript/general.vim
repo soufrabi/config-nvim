@@ -16,3 +16,14 @@
 " To set filetypes
 " autocmd BufNewFile,BufRead *.md,*.mkdn,*.markdown :set filetype=markdown
 " autocmd BufNewFile,BufRead *.cpp :set filetype=cpp
+
+
+
+" Automatically change to the directory containing the current file
+" autocmd BufEnter * execute 'cd ' . expand('%:p:h')
+
+
+" Automatically change to the directory containing the current file, except for fugitive buffers
+autocmd BufEnter * if expand('%:p')!~#'/\.git/\|fugitive/' | execute 'cd ' . expand('%:p:h') | endif
+
+
