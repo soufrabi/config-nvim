@@ -75,6 +75,6 @@ return require('packer').startup(function(use)
 
 
 	-- Vim bookmarks
-	use {'MattesGroeger/vim-bookmarks'}
+	-- use {'MattesGroeger/vim-bookmarks'}
 
 end)

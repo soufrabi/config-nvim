@@ -17,7 +17,7 @@ require('indent-line-config')
 require('emmet-config')
 require('nerdtree-config')
 require('markdown-preview-config')
-require('bookmarks-config')
+-- require('bookmarks-config')
 
 require('general-python')
 
@@ -35,7 +35,7 @@ vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
 -- vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
 
 vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
-vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 
 
