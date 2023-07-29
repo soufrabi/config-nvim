@@ -20,3 +20,7 @@ require('nerdtree-config')
 require('markdown-preview-config')
 
 vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
+vim.cmd('source ~/.config/nvim/vimscript/general.vim')
+vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
+
+
