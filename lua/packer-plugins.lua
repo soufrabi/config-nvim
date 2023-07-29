@@ -24,7 +24,13 @@ return require('packer').startup(function(use)
 	
 	-- NvimTree
 	-- use {'nvim-tree/nvim-tree.lua'}
-	
+	use {
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional, for file icons
+		},
+		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
 	-- NerdTree
 	use {'preservim/nerdtree'}
 

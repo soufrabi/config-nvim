@@ -185,7 +185,7 @@ vim.api.nvim_create_autocmd("BufEnter",{
 
 
 vim.api.nvim_create_autocmd("BufEnter",{
-    pattern = {"NERD_tree_*","fugitive://*"},
+    pattern = {"NERD_tree_*","fugitive://*","NvimTree_*"},
     callback=function()
         -- print ("DisableRun "..vim.bo.filetype)
 

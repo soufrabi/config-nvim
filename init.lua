@@ -8,7 +8,9 @@ require('keymaps')
 require('packer-plugins')
 
 
--- require('nvim-tree-config')
+require('nvim-tree-config')
+require('nvim-tree-webdevicons-config')
+
 require('coc-config')
 require('ale-config');
 require('indent-line-config')
