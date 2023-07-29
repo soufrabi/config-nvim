@@ -16,7 +16,7 @@ to activate
 source ~/venvs/.nvim-venv/bin/activate
 ```
 
-
+[Python Virtualenv Stackoverflow](https://stackoverflow.com/questions/67951453/python-and-nvim-how-to-activate-both-global-and-local-virtual-env-at-the-same-t)
 
 
 The virtualenv that the python_host_prog is pointing to is not for the virtual environment that the python 
