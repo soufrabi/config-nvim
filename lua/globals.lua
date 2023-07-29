@@ -48,7 +48,7 @@ end
 
 
 -- Filetypes I normally deal with
-file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt","*.js","*.jsx"}
+file_types= {"*.c","*.cpp","*.sh","*.java","*.py","*.md","*.go","*.rs","*.dart","*.lua","*.txt","*.html","*.css","*.js","*.jsx","*.json"}
 
 
 

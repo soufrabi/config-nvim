@@ -1,11 +1,12 @@
 -- nvim top level config file
+-- init.lua
+
+
+require('packer-plugins')
 
 require('globals')
 require('general')
 require('keymaps')
-
-
-require('packer-plugins')
 
 
 require('nvim-tree-config')
