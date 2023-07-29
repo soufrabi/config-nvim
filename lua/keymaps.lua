@@ -89,8 +89,8 @@ map("n","<Leader>e","<Plug>(ale_next_wrap)")
 
 --  CP
 
-map('n','@c',':40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>')
-map('n','@d',':lua close_io_buffers() <CR>')
+map('n','@c',':40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true })
+map('n','@d',':lua close_io_buffers() <CR>', { silent = true })
 
 function close_io_buffers()
   -- Get all open buffer handles
