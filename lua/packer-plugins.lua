@@ -40,4 +40,11 @@ return require('packer').startup(function(use)
 
 	--Indent line
 	use {'Yggdroot/indentLine'}
+
+	--Vim obsession
+	use {'tpope/vim-obsession'}
+
+	-- Emmet abbreviation
+	use {'mattn/emmet-vim'}
+
 end)

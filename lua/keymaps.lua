@@ -9,12 +9,20 @@ end
 
 vim.g.mapleader = ";"
 
-map("n","<C-s>",":w <CR>")
-map("i","<C-s>",'<Esc>:w <CR>a')
+map("n","<C-a>","<Nop>")
+map("i","<C-a>","<Nop>")
+map("v","<C-a>","<Nop>")
+
+map("n","<C-q>","<Nop>")
+map("i","<C-q>","<Nop>")
+map("v","<C-q>","<Nop>")
+
+-- map("n","<C-s>",":w <CR>")
+-- map("i","<C-s>",'<Esc>:w <CR>a')
 -- map("n","<Leader>ss",":w <CR>")
 
-map("n","<C-q>",":qa! <CR>")
-map("i","<C-q>","<Esc>:qa! <CR>")
+-- map("n","<C-q>",":qa! <CR>")
+-- map("i","<C-q>","<Esc>:qa! <CR>")
 -- map("n","lll",":qa! <CR>")
 
 -- map("n",";",":")
@@ -36,8 +44,8 @@ map("i","<C-f>","<Esc>:NvimTreeToggle <CR>")
 map("n","<Leader>t",":NvimTreeToggle <CR>")
 
 
-map("n","<C-a>","<C-w>w")
-map("i","<C-a>","<Esc><C-w>wi")
+map("n","<C-w>","<C-w>w")
+map("i","<C-w>","<Esc><C-w>wi")
 
 
 -- ALE linter
