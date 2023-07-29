@@ -63,4 +63,8 @@ return require('packer').startup(function(use)
 	-- Fzf
 	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
 	use 'junegunn/fzf.vim'
+
+	-- Vim bookmarks
+	use {'MattesGroeger/vim-bookmarks'}
+
 end)

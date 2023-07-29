@@ -27,6 +27,7 @@ vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
 vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
 vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
+vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 
 
