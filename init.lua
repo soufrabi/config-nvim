@@ -20,7 +20,7 @@ require('indent-line-config')
 require('emmet-config')
 require('markdown-preview-config')
 
-require('general-python')
+require('python-general')
 
 require('coderunner')
 require('auto-commands')

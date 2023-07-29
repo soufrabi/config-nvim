@@ -18,7 +18,7 @@ set.smartindent = true
 -- set.wrap = false
 set.wrap = true
 
-set.swapfile =false
+set.swapfile = false
 set.backup = false
 
 set.hlsearch = false
@@ -33,7 +33,7 @@ set.splitbelow = true
 -- line numbering
 set.nu = true
 -- set.relativenumber=true
-set.relativenumber=false
+set.relativenumber = false
 
 -- vim.g.python3_host_prog = '/usr/bin/python3'
 
@@ -41,7 +41,7 @@ set.cursorline = true
 
 
 -- colorscheme
-vim.cmd("colorscheme Dark")
+-- vim.cmd("colorscheme Dark")
 -- Dark colorscheme is in vim-colorschemes plugin
 
 -- this colorscheme may be overriden by catppuccin
@@ -60,7 +60,17 @@ vim.api.nvim_command('set mousemodel=extend')
 -- Enable persistent undo
 vim.cmd('set undofile')
 -- vim.o.undodir = '~/.config/nvim/undo'
-vim.o.undodir = home_dir..'/.config/nvim/undo'
+-- vim.o.undodir = home_dir..'/.config/nvim/undo'
+
+
+
+if globals.getOS() == 'Linux' then
+   vim.o.undodir = globals.config_dir..'/undo'
+elseif globals.getOS() == 'Windows' then
+   vim.o.undodir = globals.config_dir..'\\undo'
+end
+
+
 
 
 

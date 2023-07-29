@@ -67,6 +67,7 @@ home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
 -- Get path for config directory
 globals.config_dir = vim.fn.stdpath('config')
 
+-- globals.path = require('plenary.path')
 
 -- Filetypes I normally deal with
 file_types = { "*.c", "*.cpp", "*.sh", "*.java", "*.py", "*.md", "*.go", "*.rs", "*.dart", "*.lua", "*.txt", "*.html",
