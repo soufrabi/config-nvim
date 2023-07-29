@@ -13,13 +13,14 @@ require('coc-config')
 require('ale-config');
 require('indent-line-config')
 
-require('coderunner')
 
 require('emmet-config')
 require('nerdtree-config')
 require('markdown-preview-config')
 
 require('general-python')
+
+require('coderunner')
 require('auto-commands')
 
 
@@ -36,22 +37,51 @@ vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
 
 
+
+-- Optional / Device specific files
+
+local username = os.getenv("USER")
+-- print("The current user is: " .. username)
+
 local function file_exists(name)
    local f=io.open(name,"r")
    if f~=nil then io.close(f) return true else return false end
 end
 
--- coc color scheme light and dark
 
-if (file_exists('vimscript/coc-config-light.vim'))
+-- Coc color schemes : light or dark
+
+if (file_exists('/home/'..username..'/.config/nvim/vimscript/coc-config-light.vim'))
 then
 vim.cmd('source ~/.config/nvim/vimscript/coc-config-light.vim')
 end
 
 
-if (file_exists('vimscript/coc-config-dark.vim'))
+if (file_exists('/home/'..username..'/.config/nvim/vimscript/coc-config-dark.vim'))
 then
 vim.cmd('source ~/.config/nvim/vimscript/coc-config-dark.vim')
 end
+
+
+-- Testing
+
+if (file_exists('/home/'..username..'/.config/nvim/vimscript/test.vim'))
+then
+vim.cmd('source ~/.config/nvim/vimscript/test.vim')
+end
+-- Write test vimscript code in vimscript/test.vim
+
+pcall(require,"test")
+-- Write test lua code in lua/test.lua
+
+
+-- check if the file exists using pcall
+-- local ok, _ = pcall(require, "test")
+
+-- if the file does not exist, print an error message
+-- if not ok then
+--   print("Error: " .. "test.lua" .. " not found!")
+-- end
+
 
 

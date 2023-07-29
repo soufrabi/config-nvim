@@ -1,2 +1,9 @@
+# Git ignore
+
 plugin/
 vimscript/coc-config-light.vim
+vimscript/coc-config-dark.vim
+
+# Testing
+lua/test.lua
+vimscript/test.vim
