@@ -17,6 +17,7 @@ require('indent-line-config')
 require('emmet-config')
 require('nerdtree-config')
 require('markdown-preview-config')
+require('bookmarks-config')
 
 require('general-python')
 

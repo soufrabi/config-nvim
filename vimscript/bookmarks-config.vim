@@ -2,12 +2,6 @@
 
 
 let g:bookmark_sign = '♥'
-let g:bookmark_highlight_lines = 1
-
-" disble all default key bindings of vim-bookmarks plugin
-let g:bookmark_no_default_key_mappings = 1
-
-
 
 
 " Keymaps
@@ -40,7 +34,7 @@ function! BookmarkUnmapKeys()
     unmap mg
 endfunction
 
-autocmd BufEnter * :call BookmarkMapKeys()
-autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+" autocmd BufEnter * :call BookmarkMapKeys()
+" autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 
