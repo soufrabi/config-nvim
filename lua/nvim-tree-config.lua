@@ -190,6 +190,8 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
         git_clean = false,
         no_buffer = false,
         custom = ignored_dirs,
+        -- files/ directores ignored by nvim_tree
+        -- default is {}
         exclude = {},
       },
       filesystem_watchers = {
@@ -230,7 +232,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
           },
         },
         open_file = {
-          quit_on_open = false,
+          quit_on_open = true,
+          -- quit nvim_tree on opening a file
+          -- dafault is false
           resize_window = true,
           window_picker = {
             enable = true,
@@ -318,16 +322,14 @@ function NvimTreeToggleVCS()
   end
 end
 
+
 -- map("n","<C-\\>",":NvimTreeToggle<CR>")
 -- map("n","<C-\\>","<Esc>:NvimTreeToggle<CR>")
 -- map("n","<C-\\>","<Esc>:NvimTreeToggle<CR>")
 
-
-
 map("n","<Leader>t",":lua NvimTreeToggleVCS()<CR>", {silent = true, noremap = true})
 -- map("i","<C-f>","<Esc>:lua NvimTreeToggleVCS()<CR>", {silent = true, noremap = true})
 -- map("v","<C-f>","<Esc>:lua NvimTreeToggleVCS()<CR>", {silent = true, noremap = true})
-
 
 
 
