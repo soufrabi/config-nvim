@@ -77,16 +77,26 @@ local function CRun(fp, dir, fnwe, compiler)
 
     -- map('n','<C-\\>',':term mkdir -p '..dir..'/build && g++ -g '..fp..' -o '..dir..'/build/'..fnwe..' && '..dir..'/build/'..fnwe..' <CR>')
 
+    local ps = '/'
+    -- ps -> path separator
+
+    if G.getOS() == "Linux" then
+        ps = '/'
+    elseif G.getOS() == "Windows" then
+        ps = '\\'
+    end
+
+
     local comF5 = ':tabnew | term mkdir -p ' ..
-        dir .. '/build && ' .. compiler .. ' -g ' .. fp ..
-        ' -o ' .. dir .. '/build/' .. fnwe .. ' && ' .. dir .. '/build/' .. fnwe .. ' <CR>'
+        dir .. ps..'build && ' .. compiler .. ' -g ' .. fp ..
+        ' -o ' .. dir .. ps..'build'..ps .. fnwe .. ' && ' .. dir .. ps..'build'..ps .. fnwe .. ' <CR>'
     local comF6 = ':! mkdir -p ' ..
-        dir .. '/build && ' .. compiler .. ' -g ' .. fp ..
-        ' -o ' .. dir .. '/build/' .. fnwe .. ' && ' .. dir .. '/build/' .. fnwe .. ' <CR>'
+        dir .. ps..'build && ' .. compiler .. ' -g ' .. fp ..
+        ' -o ' .. dir .. ps..'build'..ps .. fnwe .. ' && ' .. dir .. ps..'build'..ps .. fnwe .. ' <CR>'
     local comF7 = ':tabnew | term mkdir -p ' ..
         dir ..
-        '/build && ' .. compiler ..
-        ' -g ' .. fp .. ' -o ' .. dir .. '/build/' .. fnwe .. ' && gdb -tui -q ' .. dir .. '/build/' .. fnwe .. ' <CR>'
+        ps..'build && ' .. compiler ..
+        ' -g ' .. fp .. ' -o ' .. dir .. ps..'build'..ps .. fnwe .. ' && gdb -tui -q ' .. dir .. ps..'build'..ps .. fnwe .. ' <CR>'
 
     map('n', '<F5>', comF5)
     map('i', '<F5>', '<Esc> ' .. comF5)
