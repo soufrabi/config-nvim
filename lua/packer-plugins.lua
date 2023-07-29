@@ -80,8 +80,21 @@ return require('packer').startup(function(use)
 	-- Vim - colorschemes
 	use { 'flazz/vim-colorschemes' }
 
-	--Indent line
-	use { 'Yggdroot/indentLine' }
+
+	-- nvim-treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
+
+	-- Indent line
+	-- use { 'Yggdroot/indentLine' }
+
+	-- indent-blankline
+	use "lukas-reineke/indent-blankline.nvim"
 
 	-- Vim obsession
 	use { 'tpope/vim-obsession' }

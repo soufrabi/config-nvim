@@ -13,7 +13,9 @@ require('nvim-tree-config')
 require('nvim-tree-webdevicons-config')
 
 require('ale-config');
-require('indent-line-config')
+-- require('indent-line-config')
+require('nvim-tree-sitter')
+require("indent-blankline")
 
 
 require('emmet-config')
