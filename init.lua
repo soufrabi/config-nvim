@@ -17,5 +17,5 @@ require('coderunner')
 
 require('emmet-config')
 require('nerdtree-config')
-
+require('markdown-preview-config')
 

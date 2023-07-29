@@ -56,4 +56,7 @@ return require('packer').startup(function(use)
 	-- Latex preview
 	use {'xuhdev/vim-latex-live-preview'}
 
+	-- Markdown preview
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
 end)
