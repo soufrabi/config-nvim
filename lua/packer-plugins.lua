@@ -11,13 +11,13 @@ return require('packer').startup(function(use)
 
 
 	-- Vim commentary
-	use {'tpope/vim-commentary'}
+	use { 'tpope/vim-commentary' }
 
 	-- Ale
-	use {'dense-analysis/ale'}
+	use { 'dense-analysis/ale' }
 
 	-- Coc
-	use {'neoclide/coc.nvim', branch = 'release'}
+	use { 'neoclide/coc.nvim', branch = 'release' }
 
 	-- Ultisnippets
 	-- use {'SirVer/ultisnips'}
@@ -29,46 +29,47 @@ return require('packer').startup(function(use)
 		requires = {
 			'nvim-tree/nvim-web-devicons', -- optional, for file icons
 		},
-		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+		tag = 'nightly'           -- optional, updated every week. (see issue #1193)
 	}
 
 	-- NerdTree
 	-- use {'preservim/nerdtree'}
 
-    -- Vim-Airline
-    use {'vim-airline/vim-airline'}
-    use {'vim-airline/vim-airline-themes'}
+	-- Vim-Airline
+	use { 'vim-airline/vim-airline' }
+	use { 'vim-airline/vim-airline-themes' }
 
-    -- Fugitive
-    use {'tpope/vim-fugitive'}
+	-- Fugitive
+	use { 'tpope/vim-fugitive' }
 
-    -- Polyglot
-    use {'sheerun/vim-polyglot'}
+	-- Polyglot
+	use { 'sheerun/vim-polyglot' }
 
-    -- Gruvbox
-    -- use {'morhetz/gruvbox'}
+	-- Gruvbox
+	-- use {'morhetz/gruvbox'}
 
 	-- Vim - colorschemes
-	use{'flazz/vim-colorschemes'}
+	use { 'flazz/vim-colorschemes' }
 
 	--Indent line
-	use {'Yggdroot/indentLine'}
+	use { 'Yggdroot/indentLine' }
 
 	-- Vim obsession
-	use {'tpope/vim-obsession'}
+	use { 'tpope/vim-obsession' }
 
 	-- Emmet abbreviation
-	use {'mattn/emmet-vim'}
+	use { 'mattn/emmet-vim' }
 
 	-- Latex
-	use {'lervag/vimtex'}
+	use { 'lervag/vimtex' }
 
 	-- Latex preview
 	-- use {'xuhdev/vim-latex-live-preview'}
 	-- doesn't provide linting
 
 	-- Markdown preview
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 	-- Fzf
 	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
@@ -76,14 +77,14 @@ return require('packer').startup(function(use)
 
 	-- nvim-telescope
 	use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	-- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		-- or                            , branch = '0.1.x',
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
 
 	-- Vim bookmarks
-	use {'MattesGroeger/vim-bookmarks'}
+	use { 'MattesGroeger/vim-bookmarks' }
 
 	-- Folds
 	use { 'anuvyklack/pretty-fold.nvim',
@@ -105,12 +106,22 @@ return require('packer').startup(function(use)
 		},
 	}
 
-	-- Marks plugin 
+	-- Marks plugin
 	-- use { "chentoast/marks.nvim" }
 	-- Unable to delete marks properly for some representation
 	-- Not a problem of the plugin
 
-	-- Undo tree
-	use {'mbbill/undotree'}
+	-- Undo tree written in vimscript
+	-- use {'mbbill/undotree'}
+
+
+	-- Undo-Tree written in lua
+	use {
+		"jiaoshijie/undotree",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	}
+
 
 end)

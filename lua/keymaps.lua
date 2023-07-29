@@ -37,8 +37,18 @@ map("v", "<Leader>y", "\"+y", { silent = true, noremap = false })
 -- vim.keymap.set("n", "J", "mzJ`z")
 
 
--- Undo Tree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { silent = true, noremap = true })
+-- Undo Tree plugin written in vimscript
+-- vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { silent = true, noremap = true })
+
+
+-- Undo Tree plugin written in lua
+vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true })
+
+-- or
+-- vim.keymap.set('n', '<leader>uo', require('undotree').open, { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>uc', require('undotree').close, { noremap = true, silent = true })
+
+
 
 -- Coc format the entire buffe
 vim.keymap.set('n', '<leader>F', vim.cmd.Format, { silent = true, noremap = true })

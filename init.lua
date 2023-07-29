@@ -32,6 +32,7 @@ require('telescope-config')
 require('catppuccin-config')
 require('colors-config')
 -- require('marks-config')
+require('undotree-config')
 
 
 local function command_exists(command)

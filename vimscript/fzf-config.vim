@@ -37,3 +37,16 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 
+
+" -- Redefine the "W" command to do nothing
+" vim.cmd("command! -nargs=* W lua print('This command has been disabled')")
+
+
+" Redefine the "W" command to do nothing
+" command! -nargs=* W lua print('This command has been disabled')
+
+
+" Redefine the "W" command to do exactly what "w" command does that is write to a file
+command! -nargs=* W w
+
+
