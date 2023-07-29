@@ -2,17 +2,42 @@
 
 ## Installation
 
-For Arch
+### For Arch
 ```
 sudo pacman -S nvim
 ```
 
-For Ubuntu
+### For Ubuntu
+
+#### Snap Store method
 ```
 sudo snap install nvim --classic
 ```
 
-Also install nodejs (for coc.nvim)
+#### PPA method [link](https://www.linuxcapable.com/how-to-install-neovim-editor-on-ubuntu-22-04-lts/)
+
+Before proceeding, ensure your Ubuntu system is up-to-date using the following command.
+```
+sudo apt update && sudo apt upgrade -y
+```
+Before proceeding, run the following command to ensure the following dependencies are installed.
+```
+sudo apt install software-properties-common -y
+```
+Import Unstable Neovim PPA
+```
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+```
+Run an APT update to sync the changes.
+```
+sudo apt-get update
+```
+With the PPA imported, install the editor.
+```
+sudo apt install neovim -y
+```
+
+### Also install nodejs (for coc.nvim)
 
 For Arch 
 ```
