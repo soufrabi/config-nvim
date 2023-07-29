@@ -151,14 +151,14 @@ CocInstall coc-html
 CocInstall coc-css
 ```
 
-#### For javascript and typescript
+#### For javascript, typescript
 ```
 CocInstall coc-tsserver
 ```
 
 
 #### For markdown fies 
-You need **iamcco/markdown-preview.nvim** plugin installed
+You need **[iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)** plugin installed
 
 If markdown preview is not working 
 Then reinstall this plugin after installing yarn 
