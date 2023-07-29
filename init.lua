@@ -35,9 +35,11 @@ require('fzf-config')
 
 -- Lsp
 
-if B.useCoc == 1 then
+if B.useCoc then
     require('coc-config')
-else
+end
+
+if B.useNativeLsp then
     require('lsp-zero-config')
     require('lua-snips-config')
 end

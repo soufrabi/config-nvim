@@ -298,13 +298,16 @@ local function get_gitdir()
   -- Get the current file path
   local filepath = vim.fn.expand('%:p')
 
+  -- Get the current directory path
+  local dirpath = vim.fn.expand('%:p:h')
+
   -- Find the root directory of the Git repository
   local gitdir = vim.fn.finddir('.git', filepath .. ';')
 
   if gitdir == '' then
     -- The current file is not in a Git repository
     -- print('Error: Current file is not in a Git repository')
-    return false, gitdir
+    return false, dirpath
   else
     -- Get the root directory of the Git repository
     local rootdir = vim.fn.fnamemodify(gitdir, ':h')
@@ -317,7 +320,8 @@ function NvimTreeToggleVCS()
 
   local isGitDir, gitdir = get_gitdir()
   if isGitDir == false then
-    vim.cmd("NvimTreeFindFileToggle ".. G.home_dir)
+    -- vim.cmd("NvimTreeFindFileToggle ".. G.home_dir)
+    vim.cmd("NvimTreeFindFileToggle "..gitdir)
   else
     -- print(gitdir)
     vim.cmd("NvimTreeFindFileToggle ".. gitdir)

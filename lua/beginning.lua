@@ -2,6 +2,10 @@
 
 B = {}
 
-B.useCoc = 1
 
+
+
+
+B.useCoc = false
+B.useNativeLsp = true
 
