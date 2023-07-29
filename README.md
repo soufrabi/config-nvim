@@ -47,6 +47,13 @@ sudo apt-get update
 sudo apt install neovim -y
 ```
 
+For Windows 
+```
+# Run as administrator
+
+choco install neovim
+```
+
 ### Also install nodejs (for coc.nvim)
 
 For Arch 
@@ -71,11 +78,19 @@ sudo npm i -g yarn
 sudo npm i -g neovim
 ```
 
+For Windows
+```
+# Run as administrator
+choco install nodejs
+choco install yarn
+```
+
 
 ## To use my config file
 
 #### Clone this repository
 
+UNIX
 ###### Clone using HTTPS method
 ```
 git clone https://github.com/awesomeDev12/nvim.git ~/.config/nvim
@@ -88,10 +103,21 @@ OR
 gh repo clone awesomeDev12/nvim ~/.config/nvim
 ```
 
+Windows
+```
+git clone https://github.com/awesomeDev12/nvim.git $Env:USERPROFILE\AppData\Local\nvim
+```
+
 #### Install packer plugin manager
+UNIX
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+Windows
+```
+git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 ```
 
 #### For snippets
@@ -101,8 +127,14 @@ CocInstall coc-snippets
 ```
 
 Use my snippets
+UNIX
 ```
 gh repo clone awesomeDev12/ultisnips ~/.config/coc/ultisnips
+```
+
+Windows
+```
+git clone https://github.com/awesomeDev12/ultisnips.git $Env:USERPROFILE\AppData\Local\coc\ultisnips
 ```
 
 ### Language Support
