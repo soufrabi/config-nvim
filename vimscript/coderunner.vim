@@ -3,25 +3,25 @@
 " Cpp
 
 function! CppRun()
-nnoremap <F5> :term mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR> 
+nnoremap <F5> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
 " normal mode: run
-inoremap <F5> <Esc>:term mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR> 
+inoremap <F5> <Esc> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
 " insert mode: escape to normal and run
-vnoremap <F5> <Esc>:term mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR>  
+vnoremap <F5> <Esc> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
 " visual mode: escape to normal and run
 
-nnoremap <F6> :! mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR> 
+nnoremap <F6> :! mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
 " normal mode: run
-inoremap <F6> <Esc>:! mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR> 
+inoremap <F6> <Esc> :! mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
 " insert mode: escape to normal and run
-vnoremap <F6> <Esc>:! mkdir -p build && g++ -g % -o build/%:r && ./build/%:r<CR>  
+vnoremap <F6> <Esc> :! mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && %:p:h/build/%:t:r <CR>
 " visual mode: escape to normal and run
 
-nnoremap <F7> :term mkdir -p build && g++ -g % -o build/%:r && gdb -tui -q build/%:r<CR> 
+nnoremap <F7> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && gdb -tui -q %:p:h/build/%:t:r <CR>
 " normal mode: run
-inoremap <F7> <Esc>:term mkdir -p build && g++ -g % -o build/%:r && gdb -tui -q build/%:r<CR> 
+inoremap <F7> <Esc> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && gdb -tui -q %:p:h/build/%:t:r <CR>
 " insert mode: escape to normal and run
-vnoremap <F7> <Esc>:term mkdir -p build && g++ -g % -o build/%:r && gdb -tui -q build/%:r<CR>  
+vnoremap <F7> <Esc> :term mkdir -p %:p:h/build && g++ -g %:p -o %:p:h/build/%:t:r && gdb -tui -q %:p:h/build/%:t:r <CR>
 " visual mode: escape to normal and run
 
 endfunction
@@ -39,7 +39,6 @@ inoremap <F5> <Esc>:term mkdir -p build && gcc -g % -o build/%:r && ./build/%:r<
 " insert mode: escape to normal and run
 vnoremap <F5> <Esc>:term mkdir -p build && gcc -g % -o build/%:r && ./build/%:r<CR>  
 " visual mode: escape to normal and run
-
 
 nnoremap <F6> :! mkdir -p build && gcc -g % -o build/%:r && ./build/%:r<CR> 
 " normal mode: run

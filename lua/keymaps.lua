@@ -43,6 +43,8 @@ map("n","<Leader>j","<C-d>")
 
 -- map("n","<Leader>t",":NvimTreeToggle <CR>")
 map("n","<Leader>t",":NERDTreeToggle <CR>")
+map("n","<Leader>T",":NERDTreeToggle %<CR>")
+map("n","<Leader>l",":lcd %:p:h<CR>")
 
 
 map("n","<C-a>","<C-w>w")
