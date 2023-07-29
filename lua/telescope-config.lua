@@ -36,9 +36,11 @@ require('telescope').setup{
 
   pickers = {
     find_files = {
-      theme = "dropdown",
+      -- theme = "dropdown",
       -- hidden = true
 
+    },
+    git_files = {
     }
   },
   extensions = {
@@ -50,9 +52,56 @@ require('telescope').setup{
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fd', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fc', builtin.colorscheme, {})
+
+
+vim.keymap.set('n', '<leader>lg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
+
+
+
+-- Define your custom command
+function git_files_new()
+
+
+  builtin.find_files({
+    prompt_title = "Git Files New",
+    cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1],
+   file_ignore_patterns = {"node_modules/", ".git/",'.*.swp'},
+
+    hidden = true,
+  })
+end
+
+-- Register your command with Vim
+vim.cmd("command! GitFilesNew lua git_files_new()")
+
+-- Set a keybinding for your command
+-- vim.api.nvim_set_keymap('n', '<leader>gf', ':GitFilesNew<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', ':lua git_files_new()<CR>', { noremap = true })
+
+
+-- Define your custom command
+function live_grep_new()
+  builtin.live_grep({
+    prompt_title = "Live Grep New",
+    cwd = vim.fn.systemlist('git rev-parse --show-toplevel')[1],
+    file_ignore_patterns = { '.git/', 'node_modules/', '.*.swp' },
+  })
+end
+
+-- Register your command with Vim
+vim.cmd("command! LiveGrepNew lua live_grep_new()")
+
+-- Set a keybinding for your command
+vim.api.nvim_set_keymap('n', '<leader>fd', ':LiveGrepNew<CR>', { noremap = true })
+
+
+
+
+
+
+
 
