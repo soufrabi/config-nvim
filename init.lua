@@ -19,6 +19,8 @@ require('emmet-config')
 require('nerdtree-config')
 require('markdown-preview-config')
 
+require('general-python')
+
 vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
 vim.cmd('source ~/.config/nvim/vimscript/general.vim')
 vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
