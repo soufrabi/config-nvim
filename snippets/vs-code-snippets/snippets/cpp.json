@@ -13,7 +13,7 @@
         "description": "IO redirection"
     },
     "Basic Snippet for CP": {
-        "prefix": "cpbasic",
+        "prefix": "cp1",
         "body": [
             "#include <bits/stdc++.h>",
             "using namespace std;",
@@ -49,7 +49,7 @@
         "description": "IO redirection"
     },
     "Core Snippet for competitve programming": {
-        "prefix": "cpcore",
+        "prefix": "cp2",
         "body": [
             "#include <bits/stdc++.h>",
             "using namespace std;",
