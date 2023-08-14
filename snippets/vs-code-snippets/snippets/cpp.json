@@ -18,6 +18,9 @@
             "#include <bits/stdc++.h>",
             "using namespace std;",
             "",
+            "#define endl \"\\n\"",
+            "",
+            "",
             "typedef long long int li;",
             "typedef long double ld;",
             "typedef pair<int,int> pi;",
@@ -73,7 +76,7 @@
             "",
             "    auto stop1 = chrono::high_resolution_clock::now();",
             "    auto duration = chrono::duration_cast<chrono::microseconds>(stop1 - start1);",
-            "    cerr << \"Time : \" << duration . count() / 1000 << endl;",
+            "    cerr << endl << \"Time : \" << duration . count() / 1000 << \".\" << duration.count()%1000 << endl;",
             "",
             "    return 0;",
             "}"
