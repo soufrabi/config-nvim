@@ -90,10 +90,10 @@ vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
 --  CP
 
 -- function close_io_buffers is defined in globals.lua
-map('n','@c',':lua G.close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
-map('n','@C',':lua G.close_io_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
-map('n','@d',':lua G.close_io_buffers() <CR>', { silent = true, noremap = true })
-map('n','@D',':lua G.close_io_buffers() <CR>', { silent = true, noremap = true })
+map('n','@c',':lua G.close_ioe_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
+map('n','@C',':lua G.close_ioe_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>',{ silent = true, noremap = true})
+map('n','@d',':lua G.close_ioe_buffers() <CR>', { silent = true, noremap = true })
+map('n','@D',':lua G.close_ioe_buffers() <CR>', { silent = true, noremap = true })
 
 
 

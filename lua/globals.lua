@@ -19,7 +19,7 @@ function G.IsNonCodeBuffer(str)
   end
 end
 
-function G.close_io_buffers()
+function G.close_ioe_buffers()
   -- Get all open buffer handles
   local buffers = vim.api.nvim_list_bufs()
 
@@ -32,7 +32,7 @@ function G.close_io_buffers()
     local file_name = vim.fn.fnamemodify(name, ":t")
 
     -- Check if the file name matches "input.txt" or "output.txt"
-    if file_name == "input.txt" or file_name == "output.txt" then
+    if file_name == "input.txt" or file_name == "output.txt" or file_name == "error.txt" then
       -- Close the buffer
       vim.api.nvim_buf_delete(buf, { force = true })
     end
