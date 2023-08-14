@@ -91,7 +91,7 @@ vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
 
 
 -- local open_ioe_buffers = ':lua G.close_ioe_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>'
-local open_ioe_buffers_command = ':lua G.close_ioe_buffers() <CR>:60vs input.txt <CR>:sp output.txt <CR>:sp error.txt <CR>:wincmd W <CR>:wincmd W <CR>:windcmd W <CR>'
+local open_ioe_buffers_command = ':lua G.close_ioe_buffers() <CR>:60vs input.txt <CR>:sp output.txt <CR>:sp error.txt <CR>:wincmd W <CR>:wincmd W <CR>:wincmd W <CR>'
 
 -- function close_io_buffers is defined in globals.lua
 map('n','@c',open_ioe_buffers_command,{ silent = true, noremap = true})
