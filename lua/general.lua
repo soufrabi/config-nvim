@@ -39,6 +39,10 @@ set.relativenumber = false
 
 set.cursorline = true
 
+-- update time might be the reason for frequent hangs 
+-- its unit is milliseconds
+set.updatetime = 2000
+
 
 -- colorscheme
 -- vim.cmd("colorscheme Dark")
