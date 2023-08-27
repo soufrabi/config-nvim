@@ -44,6 +44,12 @@ set.cursorline = true
 set.updatetime = 2000
 
 
+set.ignorecase = true
+-- for case sensitive search use 'set smartcase '
+
+
+
+
 -- colorscheme
 -- vim.cmd("colorscheme Dark")
 -- Dark colorscheme is in vim-colorschemes plugin
