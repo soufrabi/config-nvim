@@ -8,12 +8,12 @@
 
 UNIX
 ```
-git clone https://github.com/awesomeDev12/nvim.git ~/.config/nvim
+git clone https://github.com/anirbandey1/nvim.git ~/.config/nvim
 ```
 
 Windows
 ```
-git clone https://github.com/awesomeDev12/nvim.git $Env:USERPROFILE\AppData\Local\nvim
+git clone https://github.com/anirbandey1/nvim.git $Env:USERPROFILE\AppData\Local\nvim
 ```
 
 #### Install Packer plugin manager
