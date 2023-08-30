@@ -29,14 +29,14 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 ```
 
 
-#### Python provider
+<!-- #### Python provider -->
 
-Python virtualenv command
-```
+<!-- Python virtualenv command -->
+<!-- ``` -->
 
-#Install in virtualenv
-python3 -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python
-```
+<!-- #Install in virtualenv -->
+<!-- python3 -m venv ~/.venvs/.nvim-venv && source ~/.venvs/.nvim-venv/bin/activate && python3 -m pip install --upgrade pip && python3 -m pip install pynvim && which python -->
+<!-- ``` -->
 
 
 
