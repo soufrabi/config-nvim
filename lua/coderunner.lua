@@ -42,8 +42,10 @@ function Coderunner(key)
            exec(string.format('cd %s ; sh %s',dir,fp))
        elseif ext=="py" then
            exec(string.format('cd %s ; python3 %s',dir,fp))
-       elseif true then
-       elseif true then
+       elseif ext=="js" then
+           exec(string.format('cd %s ; node %s',dir,fp))
+       else
+           print("Coderunner not configured")
        end
 
     elseif key=="F6" then
@@ -57,6 +59,10 @@ function Coderunner(key)
            execTerm(string.format('cd %s ; sh %s',dir,fp))
         elseif ext=="py" then
            execTerm(string.format('cd %s ; python3 %s',dir,fp))
+        elseif ext=="js" then
+           execTerm(string.format('cd %s ; node %s',dir,fp))
+        else 
+           print("Coderunner not configured")
         end
 
     elseif key=="F7" then
@@ -64,6 +70,8 @@ function Coderunner(key)
             execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="cpp" then
             execTerm(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
+        else 
+            print("Coderunner (Debugger) not configured")
         end
 
     end
