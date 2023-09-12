@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
 	use { 'tpope/vim-commentary' }
 
 	-- Ale
-	use { 'dense-analysis/ale' }
+	-- use { 'dense-analysis/ale' }
 
 
 	-- Coc

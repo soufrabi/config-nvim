@@ -12,8 +12,6 @@ require('keymaps')
 require('nvim-tree-config')
 require('nvim-tree-webdevicons-config')
 
-require('ale-config');
--- require('indent-line-config')
 require('nvim-tree-sitter')
 require("indent-blankline")
 
@@ -46,13 +44,21 @@ if B.useNativeLsp then
     require('lua-snips-config')
 end
 
-
+-- Deprecated begin
+--
 -- File managers
 -- require('nerdtree-config')
 
 -- bookmarks,marks (not used)
 -- require('marks-config')
 -- require('bookmarks-config')
+
+-- require('indent-line-config')
+
+-- Linting engine
+-- require('ale-config');
+
+-- Deprecated end
 
 
 local function command_exists(command)
