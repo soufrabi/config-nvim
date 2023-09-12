@@ -5,6 +5,11 @@ local function exec(command)
    vim.api.nvim_command(':! '..command)
 end
 
+local function execJob(command)
+
+   vim.api.nvim_command(':call jobstart( \''..command..' \' )')
+end
+
 local function execTerm(command) 
    
    vim.api.nvim_command(':tabnew | terminal '..command)
@@ -50,6 +55,8 @@ function Coderunner(key)
            exec(string.format('cd %s ; python3 %s',dir,fp))
        elseif ext=="js" then
            exec(string.format('cd %s ; node %s',dir,fp))
+       elseif ext=="html" then
+           execJob(string.format('cd %s ; surf %s',dir,fp))
        elseif ext=="md" then
            vim.cmd(string.format('MarkdownPreview'))
        else
