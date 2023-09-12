@@ -11,10 +11,16 @@ local function execTerm(command)
 end
 
 
-local function  mapall(key,keymap)
-   map('n',key,keymap)
-   map('i',key,'<Esc> '..keymap)
-   map('v',key,'<Esc> '..keymap)
+local function  mapall(key,keymap,opts)
+    if opts then
+        map('n',key,keymap,opts)
+        map('i',key,'<Esc> '..keymap,opts)
+        map('v',key,'<Esc> '..keymap,opts)
+    else
+        map('n',key,keymap)
+        map('i',key,'<Esc> '..keymap)
+        map('v',key,'<Esc> '..keymap)
+    end
 end
 
 function Coderunner(key)
@@ -44,6 +50,8 @@ function Coderunner(key)
            exec(string.format('cd %s ; python3 %s',dir,fp))
        elseif ext=="js" then
            exec(string.format('cd %s ; node %s',dir,fp))
+       elseif ext=="md" then
+           vim.cmd(string.format('MarkdownPreview'))
        else
            print("Coderunner not configured")
        end
@@ -79,8 +87,8 @@ function Coderunner(key)
 end
 
 
-mapall('<F5>','<Esc>: lua Coderunner("F5") <CR>')
-mapall('<F6>','<Esc>: lua Coderunner("F6") <CR>')
-mapall('<F7>','<Esc>: lua Coderunner("F7") <CR>')
+mapall('<F5>','<Esc>: lua Coderunner("F5") <CR>', {silent = true, noremap=true} )
+mapall('<F6>','<Esc>: lua Coderunner("F6") <CR>', {silent = true, noremap=true} )
+mapall('<F7>','<Esc>: lua Coderunner("F7") <CR>', {silent = true, noremap=true} )
 
 
