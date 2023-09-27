@@ -44,7 +44,7 @@ function Coderunner(key)
        if ext=="lua" then
           exec('lua fp')
        elseif ext=="c" then
-           exec(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ;./build/%s',dir,fnwe,fp,fnwe))
+           exec(string.format('cd %s ; mkdir -p build ; gcc -Wall -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ;./build/%s',dir,fnwe,fp,fnwe))
        elseif ext=="cpp" then
            exec(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
        elseif ext=="java" then
@@ -65,7 +65,7 @@ function Coderunner(key)
 
     elseif key=="F6" then
         if ext=="c" then 
-            execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
+            execTerm(string.format('cd %s ; mkdir -p build ; gcc -Wall -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="cpp" then
             execTerm(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="java" then
