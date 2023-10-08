@@ -8,14 +8,11 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-
-
 	-- Vim commentary
 	use { 'tpope/vim-commentary' }
 
 	-- Ale
 	-- use { 'dense-analysis/ale' }
-
 
 	-- Coc
 	-- use { 'neoclide/coc.nvim', branch = 'release' }
@@ -72,7 +69,7 @@ return require('packer').startup(function(use)
 	use { 'tpope/vim-fugitive' }
 
 	-- Polyglot
-	use { 'sheerun/vim-polyglot' }
+	-- use { 'sheerun/vim-polyglot' }
 
 	-- Gruvbox
 	-- use {'morhetz/gruvbox'}
@@ -100,7 +97,7 @@ return require('packer').startup(function(use)
 	use { 'tpope/vim-obsession' }
 
 	-- Emmet abbreviation
-	use { 'mattn/emmet-vim' }
+	-- use { 'mattn/emmet-vim' }
 
 	-- Latex
 	use { 'lervag/vimtex' }
@@ -118,8 +115,8 @@ return require('packer').startup(function(use)
 	})
 
 	-- Fzf
-	use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
-	use 'junegunn/fzf.vim'
+	-- use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end }
+	-- use 'junegunn/fzf.vim'
 
 	-- nvim-telescope
 	use {
