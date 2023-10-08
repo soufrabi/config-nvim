@@ -56,11 +56,11 @@ vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, s
 
 
 
-
-map("n","<Leader>g",":GFiles <CR>")
-map("n","<Leader>G",":GGrep <CR>")
-map("n","<Leader>z",":FZF <CR>")
-map("n","<Leader>Z",":FZF ")
+-- Fuzzy Finder
+-- map("n","<Leader>g",":GFiles <CR>")
+-- map("n","<Leader>G",":GGrep <CR>")
+-- map("n","<Leader>z",":FZF <CR>")
+-- map("n","<Leader>Z",":FZF ")
 
 -- Open a terminal window at the path to the directory containing the current file
 map("n","<Leader>b",":tabnew | term <CR>")
@@ -79,8 +79,9 @@ map("v","<C-w>","<Esc><C-w>wi",{ silent = true, noremap = true } )
 -- nnoremap <c-e> <Plug>(ale_next_wrap) 
 -- inoremap <c-e> <Esc> <Plug>(ale_next_wrap) 
 -- vnoremap <c-e> <Esc> <Plug>(ale_next_wrap)
-map('n','<Leader>d',"<Plug>(ale_previous_wrap)")
-map("n","<Leader>e","<Plug>(ale_next_wrap)")
+--
+-- map('n','<Leader>d',"<Plug>(ale_previous_wrap)")
+-- map("n","<Leader>e","<Plug>(ale_next_wrap)")
 
 
 

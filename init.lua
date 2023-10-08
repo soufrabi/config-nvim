@@ -16,7 +16,6 @@ require('nvim-tree-sitter')
 require("indent-blankline")
 
 
-require('emmet-config')
 require('markdown-preview-config')
 
 require('python-general')
@@ -30,19 +29,15 @@ require('catppuccin-config')
 require('colors-config')
 require('undotree-config')
 require('vim-commentary-config')
-require('fzf-config')
 
 
 -- Lsp
+require('lsp-zero-config')
+require('lua-snips-config')
 
-if B.useCoc then
-    require('coc-config')
-end
+-- Jupyter notebook
+-- require('magma-nvim')
 
-if B.useNativeLsp then
-    require('lsp-zero-config')
-    require('lua-snips-config')
-end
 
 -- Deprecated begin
 --
@@ -57,6 +52,19 @@ end
 
 -- Linting engine
 -- require('ale-config');
+
+-- Emmet
+-- require('emmet-config')
+
+-- Fzf
+-- require('fzf-config')
+
+-- Lsp
+-- Coc not using anymore
+-- require('coc-config')
+
+-- Device specifc Vim scripts
+-- require('vimscripts.lua')
 
 -- Deprecated end
 
@@ -116,36 +124,6 @@ end
 -- Print the home directory path
 -- print(home_dir)
 
-local function file_exists(name)
-    local f = io.open(name, "r")
-    if f ~= nil then
-        io.close(f)
-        return true
-    else return false end
-end
-
-
--- Coc color schemes : light or dark
-
-if (file_exists(G.config_dir..'/vimscript/coc-config-light.vim'))
-then
-    vim.cmd('source '..G.config_dir..'/vimscript/coc-config-light.vim')
-end
-
-
-if (file_exists(G.config_dir .. '/vimscript/coc-config-dark.vim'))
-then
-    vim.cmd('source '..G.config_dir..'/vimscript/coc-config-dark.vim')
-end
-
-
--- Testing
-
-if (file_exists(G.config_dir .. '/vimscript/test.vim'))
-then
-    vim.cmd('source '..G.config_dir..'/vimscript/test.vim')
-end
--- Write test vimscript code in vimscript/test.vim
 
 pcall(require, "test")
 -- Write test lua code in lua/test.lua

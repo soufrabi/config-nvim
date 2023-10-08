@@ -165,4 +165,9 @@ return require('packer').startup(function(use)
 			"nvim-lua/plenary.nvim",
 		},
 	}
+
+    -- Jupyter notebook
+    -- use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+
+
 end)
