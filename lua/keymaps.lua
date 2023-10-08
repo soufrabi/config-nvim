@@ -76,8 +76,8 @@ map("v","<C-w>","<Esc><C-w>wi",{ silent = true, noremap = true } )
 -- ALE linter
 -- for ale linter key binding to move to next error using Ctrl + e
 -- nmap <silent> <C-e> <Plug>(ale_next_wrap)
--- nnoremap <c-e> <Plug>(ale_next_wrap) 
--- inoremap <c-e> <Esc> <Plug>(ale_next_wrap) 
+-- nnoremap <c-e> <Plug>(ale_next_wrap)
+-- inoremap <c-e> <Esc> <Plug>(ale_next_wrap)
 -- vnoremap <c-e> <Esc> <Plug>(ale_next_wrap)
 --
 -- map('n','<Leader>d',"<Plug>(ale_previous_wrap)")
@@ -86,6 +86,10 @@ map("v","<C-w>","<Esc><C-w>wi",{ silent = true, noremap = true } )
 
 
 vim.api.nvim_command('command BufOnly silent! execute "%bd|e#|bd#"')
+vim.api.nvim_create_user_command('RemoveTrailingWhiteSpaces',function()
+    vim.api.nvim_command(':%s/\\s\\+$//e')
+end,{})
+
 
 
 --  CP
