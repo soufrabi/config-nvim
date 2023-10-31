@@ -63,7 +63,7 @@ vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, s
 -- map("n","<Leader>Z",":FZF ")
 
 -- Open a terminal window at the path to the directory containing the current file
-map("n","<Leader>b",":tabnew | term <CR>")
+map("n","<Leader>s",":tabnew | term <CR>")
 -- map("n","<Leader>B",":term sh -c 'cd %:p:h; /bin/bash' <CR>")
 
 
