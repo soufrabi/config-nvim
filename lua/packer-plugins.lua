@@ -100,7 +100,7 @@ return require('packer').startup(function(use)
 	-- use { 'mattn/emmet-vim' }
 
 	-- Latex
-	use { 'lervag/vimtex' }
+	-- use { 'lervag/vimtex' }
 
 	-- Latex preview
 	-- use {'xuhdev/vim-latex-live-preview'}

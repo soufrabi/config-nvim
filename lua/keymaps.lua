@@ -10,6 +10,7 @@ function map(mode, lhs, rhs, opts)
 end
 
 vim.g.mapleader = ";"
+vim.g.maplocalleader = ","
 
 map("n","<C-w>","<Nop>")
 map("i","<C-w>","<Nop>")
