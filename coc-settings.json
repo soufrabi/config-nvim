@@ -11,7 +11,7 @@
   "jedi.diagnostics.didChange": true,
   "jedi.diagnostics.didSave": true,
   "jedi.jediSettings.debug": true,
-  "python.pythonPath": "~/.venvs/.nvim-venc/bin/python",
+  "python.pythonPath": "~/.venvs/.nvim-venv/bin/python",
   "python.venvPath":["~/.venvs/.nvim-venv"],
     "languageserver": {
     "bash": {

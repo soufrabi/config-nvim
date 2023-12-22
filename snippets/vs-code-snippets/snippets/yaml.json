@@ -1,0 +1,10 @@
+{
+"clangd-meson": {
+    "prefix": "clangd",
+    "body": [
+        "CompileFlags:",
+        "  CompilationDatabase: \"_build\""
+    ],
+    "description": "IO redirection"
+}
+}

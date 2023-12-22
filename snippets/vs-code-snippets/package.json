@@ -56,6 +56,13 @@
 					"java"
 				],
 				"path": "./snippets/java.json"
+			},
+
+			{
+				"language": [
+					"yaml"
+				],
+				"path": "./snippets/yaml.json"
 			}
 		]
 	}
