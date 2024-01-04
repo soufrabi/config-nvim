@@ -60,6 +60,35 @@ G.getOS =  function ()
 end
 
 
+G.path_exists_old = function (name)
+    local f = io.open(name, "r")
+    if f ~= nil then
+        io.close(f)
+        return true
+    else return false end
+end
+
+--- Check if a file or directory exists in this path
+G.path_exists = function (file)
+   local ok, err, code = os.rename(file, file)
+   if not ok then
+      if code == 13 then
+         -- Permission denied, but it exists
+         return true
+      end
+   end
+   return ok, err
+end
+
+--- Check if a directory exists in this path
+G.dir_exists = function (path)
+   -- "/" works on both Unix and Windows
+   return G.path_exists(path.."/")
+end
+
+
+
+
 
 -- Get the path to the home directory
 G.home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
