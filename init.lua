@@ -40,14 +40,9 @@ require('lua-snips-config')
 -- require('magma-nvim')
 
 
-local function command_exists(command)
-    local exit_status = os.execute("which " .. command .. " >/dev/null 2>&1")
-    return exit_status == 0
-end
-
 
 if G.getOS() == "Linux" then
-    if command_exists("ascii-image-converter") then
+    if G.command_exists("ascii-image-converter") then
         -- print("ascii-image-converter command exists!")
         -- Image Viewer using Ascii art plugin
         require('image-samodostal')
@@ -56,7 +51,7 @@ if G.getOS() == "Linux" then
     end
 
 
-    if command_exists("chafa") then
+    if G.command_exists("chafa") then
         -- print("chafa command exists!")
         -- Image preview using Chafa
         -- Needs chafa installed

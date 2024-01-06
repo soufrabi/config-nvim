@@ -86,6 +86,10 @@ G.dir_exists = function (path)
    return G.path_exists(path.."/")
 end
 
+G.command_exists = function (command)
+    local exit_status = os.execute("which " .. command .. " >/dev/null 2>&1")
+    return exit_status == 0
+end
 
 
 
