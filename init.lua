@@ -40,36 +40,6 @@ require('lua-snips-config')
 -- require('magma-nvim')
 
 
--- Deprecated begin
---
--- File managers
--- require('nerdtree-config')
-
--- bookmarks,marks (not used)
--- require('marks-config')
--- require('bookmarks-config')
-
--- require('indent-line-config')
-
--- Linting engine
--- require('ale-config');
-
--- Emmet
--- require('emmet-config')
-
--- Fzf
--- require('fzf-config')
-
--- Lsp
--- Coc not using anymore
--- require('coc-config')
-
--- Device specifc Vim scripts
--- require('vimscripts.lua')
-
--- Deprecated end
-
-
 local function command_exists(command)
     local exit_status = os.execute("which " .. command .. " >/dev/null 2>&1")
     return exit_status == 0
@@ -96,34 +66,6 @@ if G.getOS() == "Linux" then
     end
 end
 
--- Vim script files
-
-
--- vim.cmd('source ~/.config/nvim/vimscript/fzf-config.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/ale-config.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/coc-config.vim')
-
--- vim.cmd('source ~/.config/nvim/vimscript/general.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/vim-commentary.vim')
-
-
--- vim.cmd('source ~/.config/nvim/vimscript/keymaps.vim')
--- Code runner moved to lua
--- vim.cmd('source ~/.config/nvim/vimscript/coderunner.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/bookmarks-config.vim')
--- vim.cmd('source ~/.config/nvim/vimscript/nerdtree-config.vim')
-
-
-
--- Optional / Device specific files
-
-
--- Get the path to the home directory
--- local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
--- Moved to globals.lua
-
--- Print the home directory path
--- print(home_dir)
 
 
 pcall(require, "test")
