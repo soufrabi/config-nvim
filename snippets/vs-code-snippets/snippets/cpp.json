@@ -86,7 +86,7 @@
         ],
         "description": "IO redirection"
     },
-    "Core Snippet for competitve programming": {
+    "Core Snippet for competitive programming": {
         "prefix": "cp2",
         "body": [
             "#include <bits/stdc++.h>",
@@ -210,6 +210,6 @@
             "    return 0;",
             "}"
         ],
-        "description": "Core Snippet for competitve programming"
+        "description": "Core Snippet for competitive programming"
     }
 }
