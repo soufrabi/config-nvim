@@ -52,7 +52,7 @@ function Coderunner(key)
        elseif ext=="sh" then
            exec(string.format('cd %s ; sh %s',dir,fp))
        elseif ext=="py" then
-           exec(string.format('cd %s ; python3 %s',dir,fp))
+           exec(string.format('cd %s ; python %s',dir,fp))
        elseif ext=="js" then
            exec(string.format('cd %s ; node %s',dir,fp))
        elseif ext=="html" then
@@ -73,7 +73,7 @@ function Coderunner(key)
         elseif ext=="sh" then
            execTerm(string.format('cd %s ; sh %s',dir,fp))
         elseif ext=="py" then
-           execTerm(string.format('cd %s ; python3 %s',dir,fp))
+           execTerm(string.format('cd %s ; python %s',dir,fp))
         elseif ext=="js" then
            execTerm(string.format('cd %s ; node %s',dir,fp))
         else 
