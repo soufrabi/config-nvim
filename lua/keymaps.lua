@@ -95,6 +95,19 @@ end,{})
 
 --  CP
 
+vim.api.nvim_create_user_command('LeetcodeConvert',function()
+    -- vim.api.nvim_command(':%s/,/\\s/g')
+    vim.api.nvim_command([[
+        %s/,/ /g
+    ]])
+    vim.api.nvim_command([[
+        %s/\[//g
+    ]])
+    vim.api.nvim_command([[
+        %s/]/\r/g
+    ]])
+end,{})
+
 
 -- local open_ioe_buffers = ':lua G.close_ioe_buffers() <CR>:40vs input.txt <CR>:sp output.txt <CR>:wincmd W <CR>:wincmd W <CR>'
 local open_ioe_buffers_command = ':lua G.close_ioe_buffers() <CR>:60vs input.txt <CR>:sp output.txt <CR>:sp error.txt <CR>:wincmd W <CR>:wincmd W <CR>:wincmd W <CR>'
