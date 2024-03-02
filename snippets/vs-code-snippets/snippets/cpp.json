@@ -71,7 +71,7 @@
             "    int testcases = 1;",
             "    cin >> testcases;",
             "",
-            "    while (testcases-- > 0)",
+            "    for(int tt = 1 ; tt <= testcases ; tt++)",
             "    {",
             "        ",
             "    }",
