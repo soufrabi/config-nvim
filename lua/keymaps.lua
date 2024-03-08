@@ -120,6 +120,10 @@ map('n','@D',':lua G.close_ioe_buffers() <CR>', { silent = true, noremap = true 
 
 
 
+-- Keymaps
+-- LspZeroFormat the entire buffer
+vim.keymap.set('n', '<leader>F', "<Esc> :LspZeroFormat <CR>", { silent = true, noremap = true })
+
 
 
 -- Unused Keymaps

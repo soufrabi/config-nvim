@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero').preset({
+local lsp_zero = require('lsp-zero').preset({
   name = 'minimal',
   set_lsp_keymaps = true,
   manage_nvim_cmp = true,
@@ -6,12 +6,8 @@ local lsp = require('lsp-zero').preset({
 })
 
 -- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
+lsp_zero.nvim_workspace()
 
-lsp.setup()
+lsp_zero.setup()
 
 
-
--- Keymaps
--- LspZeroFormat the entire buffer
-vim.keymap.set('n', '<leader>F', "<Esc> :LspZeroFormat <CR>", { silent = true, noremap = true })
