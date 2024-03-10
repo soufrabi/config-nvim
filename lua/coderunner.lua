@@ -1,7 +1,7 @@
 -- Coderunner
 
-local function exec(command) 
-   
+local function exec(command)
+
    vim.api.nvim_command(':! '..command)
 end
 
@@ -10,8 +10,8 @@ local function execJob(command)
    vim.api.nvim_command(':call jobstart( \''..command..' \' )')
 end
 
-local function execTerm(command) 
-   
+local function execTerm(command)
+
    vim.api.nvim_command(':tabnew | terminal '..command)
 end
 
@@ -39,6 +39,10 @@ function Coderunner(key)
     local ext = vim.fn.expand('%:e')
     -- print(ext)
 
+    local cppcompiledexecutable = string.format("./build/%s",fnwe);
+    local cppcompilesafe = string.format('cd %s ; mkdir -p build ; g++ -std=c++17 -Wshadow -Wall -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build',dir,fnwe,fp)
+    local cppcompilefast = string.format('cd %s ; mkdir -p build ; g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build',dir,fnwe,fp)
+
     if key=="F5" then
 
        if ext=="lua" then
@@ -46,7 +50,7 @@ function Coderunner(key)
        elseif ext=="c" then
            exec(string.format('cd %s ; mkdir -p build ; gcc -Wall -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ;./build/%s',dir,fnwe,fp,fnwe))
        elseif ext=="cpp" then
-           exec(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
+           execTerm(string.format('%s ; %s',cppcompilefast,cppcompiledexecutable))
        elseif ext=="java" then
            exec(string.format('cd %s ; mkdir -p build ; javac %s -d build ; cd build ; java %s',dir,fn,fnwe))
        elseif ext=="sh" then
@@ -64,10 +68,10 @@ function Coderunner(key)
        end
 
     elseif key=="F6" then
-        if ext=="c" then 
+        if ext=="c" then
             execTerm(string.format('cd %s ; mkdir -p build ; gcc -Wall -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="cpp" then
-            execTerm(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; ./build/%s',dir,fnwe,fp,fnwe))
+            execTerm(string.format('%s ; %s',cppcompilesafe,cppcompiledexecutable))
         elseif ext=="java" then
             execTerm(string.format('cd %s ; mkdir -p build ; javac %s -d build ; cd build ; java %s',dir,fn,fnwe))
         elseif ext=="sh" then
@@ -76,16 +80,16 @@ function Coderunner(key)
            execTerm(string.format('cd %s ; python %s',dir,fp))
         elseif ext=="js" then
            execTerm(string.format('cd %s ; node %s',dir,fp))
-        else 
+        else
            print("Coderunner not configured")
         end
 
     elseif key=="F7" then
-        if ext=="c" then 
-            execTerm(string.format('cd %s ; mkdir -p build ; gcc -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
+        if ext=="c" then
+            execTerm(string.format('cd %s ; mkdir -p build ; gcc -Wall -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
         elseif ext=="cpp" then
-            execTerm(string.format('cd %s ; mkdir -p build ; g++ -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build ; gdb -tui -q ./build/%s',dir,fnwe,fp,fnwe))
-        else 
+            execTerm(string.format('%s ; gdb -tui -q %s',cppcompilesafe,cppcompiledexecutable))
+        else
             print("Coderunner (Debugger) not configured")
         end
 
