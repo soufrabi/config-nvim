@@ -4,6 +4,9 @@
 require('beginning')
 require('packer-plugins')
 
+-- Local configurations
+pcall(require, "local")
+
 require('globals')
 require('general')
 require('keymaps')
