@@ -3,6 +3,7 @@
 plugin/
 vimscript/coc-config-light.vim
 vimscript/coc-config-dark.vim
+/lua/local
 
 # Testing
 lua/test.lua
