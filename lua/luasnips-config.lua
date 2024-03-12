@@ -53,6 +53,16 @@ vim.api.nvim_set_keymap("v", "<S-Tab>", "luasnip#jumpable(-1) ? '<Plug>luasnip-j
 
 
 
+-- Snipmate Style Snippets
+
+-- https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#snipmate
+-- require("luasnip.loaders.from_snipmate").load()
+-- specify the full path...
+-- require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets"})
+require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets/snipmate-snippets"})
+-- or relative to the directory of $MYVIMRC
+-- require("luasnip.loaders.from_snipmate").lazy_load({paths = "./snippets"})
+
 
 
 
