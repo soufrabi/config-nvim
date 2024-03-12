@@ -17,5 +17,9 @@ if not ok then
     print(errorMsg)
 else
     -- print("Set termguicolors (true colors upport) successfully")
-    vim.cmd.colorscheme "catppuccin"
+    if B.theme == "dark" then
+        vim.cmd.colorscheme "catppuccin"
+    elseif B.theme == "light" then
+        vim.cmd.colorscheme "White2"
+    end
 end
