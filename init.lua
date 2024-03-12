@@ -37,7 +37,7 @@ require('vim-commentary-config')
 -- Lsp
 require('lsp-zero-config')
 require('mason-lspconfig-config')
-require('lua-snips-config')
+require('luasnips-config')
 
 -- Jupyter notebook
 -- require('magma-nvim')
