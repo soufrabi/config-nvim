@@ -1,9 +1,83 @@
 
-## Test snippets
-# First Snippet
-snippet sniptest1 cpp-snippet
-	cout << "Hello World" << endl;
+# Cp1
+snippet cp1 "Competitive Programming Snippet"
+	#include <bits/stdc++.h>
+	using namespace std;
+	
+	/* clang-format off */
+	
+	#define endl "\n"
+	
+	typedef long long int li;
+	typedef long double ld;
+	typedef pair<int,int> pi;
+	
+	
+	mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+	
+	void _print(int t) {cerr << t;}
+	void _print(long long int t) {cerr << t;}
+	void _print(string t) {cerr << t;}
+	void _print(char t) {cerr << t;}
+	void _print(long double t) {cerr << t;}
+	void _print(double t) {cerr << t;}
+	
+	template <class T, class V> void _print(pair <T, V> p);
+	template <class T> void _print(vector <T> v);
+	template <class T> void _print(set <T> v);
+	template <class T> void _print(multiset <T> v);
+	template <class T, class V> void _print(map <T, V> v);
+	template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.first); cerr << ","; _print(p.second); cerr << "}";}
+	template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+	template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+	template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+	template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
+	
+	/* clang-format on */
+	
+	$0
+	
+	
+	int32_t main(int32_t argc, char *argv[])
+	{
+	    ios_base::sync_with_stdio(false);
+	    cin.tie(NULL);
+	    cout.tie(NULL);
+	    cerr.tie(NULL);
+	
+	#ifndef ONLINE_JUDGE
+	    freopen("input.txt", "r", stdin);
+	    freopen("output.txt", "w", stdout);
+	    freopen("error.txt", "w", stderr);
+	#endif
+	
+	    auto start1 = chrono::high_resolution_clock::now();
+	
+	    int testcases = 1;
+	    cin >> testcases;
+	
+	    for(int tt = 1 ; tt <= testcases ; tt++)
+	    {
+	        
+	    }
+	
+	    auto stop1 = chrono::high_resolution_clock::now();
+	    auto duration = chrono::duration_cast<chrono::microseconds>(stop1 - start1);
+	    cerr << endl << "Time : " << duration.count() / 1000 << "." << duration.count()%1000 << endl;
+	
+	    return 0;
+	}
 
-# Second Snippet
-snippet sniptest2
-	cout << "Snippet 2" <<endl;
+snippet snipiored "IO redirection to input.txt, output.txt, error.txt"
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	cerr.tie(NULL);
+	
+	#ifndef ONLINE_JUDGE
+	    freopen("input.txt", "r", stdin);
+	    freopen("output.txt", "w", stdout);
+	    freopen("error.txt", "w", stderr);
+	#endif
+
+
