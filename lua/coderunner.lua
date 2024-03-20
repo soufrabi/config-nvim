@@ -40,8 +40,8 @@ function Coderunner(key)
     -- print(ext)
 
     local cppCompiledExecutable = string.format("./build/%s",fnwe);
-    local cppCompileSafe = string.format('cd %s ; mkdir -p build ; g++ -std=c++17 -Wshadow -Wall -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build',dir,fnwe,fp)
-    local cppCompileFast = string.format('cd %s ; mkdir -p build ; g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result -o build/%s %s ; [ -f input.txt ] && cp -v input.txt build',dir,fnwe,fp)
+    local cppCompileSafe = string.format('cd %s ; mkdir -p build ; g++ -std=c++17 -Wshadow -Wall -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g -o build/%s %s ',dir,fnwe,fp)
+    local cppCompileFast = string.format('cd %s ; mkdir -p build ; g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result -o build/%s %s ',dir,fnwe,fp)
 
     if key=="F5" then
 
