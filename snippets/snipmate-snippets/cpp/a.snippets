@@ -88,43 +88,29 @@ snippet snipiored "IO redirection to input.txt, output.txt, error.txt"
 	#endif
 	
 snippet zzmod1 "Modular Arithmetic"
-	li modpos (li a, li m) {
-		return (a%m + m)%m;
-	}
-	li modadd (li a, li b, li m) {
-		return (a%m + 0ll + b%m) %m;
-	}
-	li modmul (li a, li b, li m) {
-		return (a%m *1ll * b%m) %m;
-	}
-	li modpow (li a, li b, li m) {
-		li res = 1ll;
-		while ( b > 0 ){
-			if(b & 1){
-				res = modmul(res,a,m);
-				b ^= 1;
-			}else {
-				a = modmul(a,a,m);
-				b >>= 1;
-			}
-		}
-		return res;
+	li modpos(li a, li m) { return (a % m + m) % m; }
+	li modadd(li a, li b, li m) { return ((a % m + 0ll + b % m) % m + m) % m; }
+	li modmul(li a, li b, li m) { return (a % m * 1ll * b % m) % m; }
+	li modpow(li a, li b, li m) {
+	    li res = 1ll;
+	    while (b > 0) {
+	        if (b & 1) {
+	            res = modmul(res, a, m);
+	            b ^= 1;
+	        } else {
+	            a = modmul(a, a, m);
+	            b >>= 1;
+	        }
+	    }
+	    return res;
 	}
 	
 
-snippet zzmod2 "Modular Arithmetic Default"
-	li const MOD = 1e9+7;
-	li modpos(li a){
-		return modpos(a,MOD);
-	}
-	li modadd(li a, li b){
-		return modadd(a,b,MOD);
-	}
-	li modmul(li a, li b){
-		return modmul(a,b,MOD);
-	}
-	li modpow(li a, li b){
-		return modpow(a,b,MOD);
-	}
+snippet zzmod2 "Modular Arithmetic with default MOD"
+	li const MOD = 1e9 + 7;
+	li modpos(li a) { return modpos(a, MOD); }
+	li modadd(li a, li b) { return modadd(a, b, MOD); }
+	li modmul(li a, li b) { return modmul(a, b, MOD); }
+	li modpow(li a, li b) { return modpow(a, b, MOD); }
 	
 
