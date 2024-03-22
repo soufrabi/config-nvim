@@ -104,6 +104,8 @@ snippet zzmod1 "Modular Arithmetic"
 	    }
 	    return res;
 	}
+	li modinv(li a, li m) { return modpow(a, m - 2, m); }
+	li moddiv(li a, li b, li m) { return modmul(a, modinv(b, m), m); }
 	
 
 snippet zzmod2 "Modular Arithmetic with default MOD"
@@ -112,5 +114,7 @@ snippet zzmod2 "Modular Arithmetic with default MOD"
 	li modadd(li a, li b) { return modadd(a, b, MOD); }
 	li modmul(li a, li b) { return modmul(a, b, MOD); }
 	li modpow(li a, li b) { return modpow(a, b, MOD); }
+	li modinv(li a) { return modinv(a, MOD); }
+	li moddiv(li a, li b) { return moddiv(a, b, MOD); }
 	
 
