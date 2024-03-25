@@ -2,6 +2,11 @@
 
 G = {}
 
+-- Get the path to the home directory
+G.home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+
+-- Get path for config directory
+G.config_dir = vim.fn.stdpath('config')
 
 
 --  Detect if the current file is a fugitive or terminal buffer
@@ -94,14 +99,29 @@ end
 
 
 
--- Get the path to the home directory
-G.home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
 
--- Get path for config directory
-G.config_dir = vim.fn.stdpath('config')
+-- Define the function to copy buffer name to clipboard
+G.CopyBufferName =  function ()
+  local buffer_path = vim.fn.expand('%:p')
+  vim.fn.setreg('+', buffer_path)
+  vim.cmd("echo 'Full path of " .. vim.fn.expand('%:t') .. " was copied to system clipboard'")
+end
 
--- globals.path = require('plenary.path')
+-- Define the command
+vim.cmd("command! CopyBufferName lua G.CopyBufferName()")
 
--- Filetypes I normally deal with
-G.file_types = { "*.c", "*.cpp", "*.sh", "*.java", "*.py", "*.md", "*.go", "*.rs", "*.dart", "*.lua", "*.txt", "*.html",
-  "*.css", "*.js", "*.jsx", "*.json" }
+
+G.CopyBufferContent = function ()
+  -- Get the content of the whole buffer
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local content = table.concat(lines, '\n')
+
+  -- Set the content to the clipboard
+  vim.fn.setreg('+', content)
+
+  -- Optionally, provide feedback to the user
+  vim.cmd("echo 'Buffer content copied to system clipboard'")
+end
+
+-- Define a command to call the Lua function
+vim.cmd("command! CopyBufferContent lua G.CopyBufferContent()")
