@@ -10,7 +10,7 @@ snippet cp1 "Competitive Programming Snippet"
 	
 	typedef long long int li;
 	typedef long double ld;
-	typedef pair<int,int> pi;
+	typedef pair<long long int, long long int> pi;
 	
 	
 	mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
@@ -75,7 +75,7 @@ snippet cp1 "Competitive Programming Snippet"
 	}
 	
 	
-snippet snipiored "IO redirection to input.txt, output.txt, error.txt"
+snippet zziored "IO redirection to input.txt, output.txt, error.txt"
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
@@ -86,7 +86,7 @@ snippet snipiored "IO redirection to input.txt, output.txt, error.txt"
 	    freopen("output.txt", "w", stdout);
 	    freopen("error.txt", "w", stderr);
 	#endif
-	
+
 snippet zzmod1 "Modular Arithmetic"
 	li modpos(li a, li m) { return (a % m + m) % m; }
 	li modadd(li a, li b, li m) { return ((a % m + 0ll + b % m) % m + m) % m; }
@@ -106,7 +106,7 @@ snippet zzmod1 "Modular Arithmetic"
 	}
 	li modinv(li a, li m) { return modpow(a, m - 2, m); }
 	li moddiv(li a, li b, li m) { return modmul(a, modinv(b, m), m); }
-	
+
 
 snippet zzmod2 "Modular Arithmetic with default MOD"
 	li const MOD = 1e9 + 7;
@@ -116,5 +116,15 @@ snippet zzmod2 "Modular Arithmetic with default MOD"
 	li modpow(li a, li b) { return modpow(a, b, MOD); }
 	li modinv(li a) { return modinv(a, MOD); }
 	li moddiv(li a, li b) { return moddiv(a, b, MOD); }
-	
 
+snippet zzpbdsheader "GNU PBDS headers"
+	#include <ext/pb_ds/assoc_container.hpp>
+	#include <ext/pb_ds/tree_policy.hpp>
+	using namespace __gnu_pbds;
+
+
+snippet zzpbds "GNU PBDS data types"
+	template<class T> using ordered_set = tree<T,null_type,less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+	template<class T> using ordered_multiset = tree<T,null_type,less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+	template<class T, class V> using ordered_map = tree<T,V,less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+	template<class T, class V> using ordered_multimap = tree<T,V,less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
